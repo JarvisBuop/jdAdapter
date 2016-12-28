@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?><!--统一常规标题栏-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/title_height"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/orange_alpha"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="20dp"
+            android:paddingRight="50dp"
+            android:src="@mipmap/back"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:maxWidth="220dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_title"
+            tools:text="Title" />
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="50dp"
+            android:paddingRight="10dp"
+            android:src="@mipmap/title_search"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:paddingLeft="50dp"
+            android:paddingRight="10dp"
+            android:text="提交"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_large"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

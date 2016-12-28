@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JarvisDemoNim.iml" filepath="$PROJECT_DIR$/JarvisDemoNim.iml" />
+      <module fileurl="file://$PROJECT_DIR$/adapterlib/adapterlib.iml" filepath="$PROJECT_DIR$/adapterlib/adapterlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/adapterlib/myadapterlib.iml" filepath="$PROJECT_DIR$/adapterlib/myadapterlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nimkit/nimkit.iml" filepath="$PROJECT_DIR$/nimkit/nimkit.iml" />
+    </modules>
+  </component>
+</project>
