@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Jdkit</string>
+    <string name="loading">加载中…</string>
+
+    <!--权限检查-->
+    <string name="settings">设置</string>
+    <string name="string_help_text">app使用过程中需要添加相应权限，保证app正常使用,可以通过"设置-权限"进行授权</string>
+    <string name="quit">退出</string>
+    <string name="help">权限设置</string>
+</resources>

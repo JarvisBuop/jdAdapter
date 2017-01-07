@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.jd.jarvisdemonim.R;
 import com.jd.jarvisdemonim.base.BaseActivity;
 import com.jd.jarvisdemonim.entity.TestBean;
-import com.jd.jarvisdemonim.utils.LogUtils;
+import com.jd.jdkit.elementkit.utils.log.LogUtils;
 import com.jd.myadapterlib.common.CommonPagerAdapter;
 import com.jd.myadapterlib.dinterface.DOnItemClickListener;
 

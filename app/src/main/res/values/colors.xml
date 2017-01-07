@@ -21,4 +21,12 @@
     <!--线-->
     <color name="line">#cccccc</color>
     <color name="gray">#e1e1e1</color>
+    <color name="gray_tabtxt">#aaaaaa</color>
+
+    <!--tablayout-->
+    <color name="tablayout_bg">#EB6100</color>
+    <color name="tablayoutSelectedTextColor">#FFFFFF</color>
+    <color name="tablayoutTextColor">#f5bba3</color>
+    <color name="tablayoutIndicatorColor">#FFFFFF</color>
+
 </resources>

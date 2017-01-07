@@ -70,9 +70,10 @@
             <Button
                 android:id="@+id/btn6"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="?attr/actionBarSize"
                 android:layout_weight="1"
                 android:padding="10dp"
+                android:text="文字跳动;"
                 android:textAllCaps="false" />
 
             <Button
@@ -81,6 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="10dp"
+                android:text="多分类适配器测试\n联网mvc测试"
                 android:textAllCaps="false" />
 
             <Button
@@ -89,6 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="10dp"
+                android:text="联网mvc测试"
                 android:textAllCaps="false" />
 
             <Button
@@ -97,8 +100,75 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="10dp"
+                android:text="tab 消息提醒器"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btn10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="bottomtab carlendar\n使用fragmenttabhost"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btn11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="使用tablayout和bottomnavigation;"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btn12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btn13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btn14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btn15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btn16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btn17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
                 android:textAllCaps="false" />
         </LinearLayout>
     </HorizontalScrollView>
 
+    <TextView
+        android:id="@+id/txt_nim"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/green"
+        android:gravity="center"
+        android:text="Nimdemo"
+        android:textSize="50dp" />
 </LinearLayout>

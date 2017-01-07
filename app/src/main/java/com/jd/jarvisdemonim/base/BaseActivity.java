@@ -9,9 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jd.jarvisdemonim.R;
-import com.jd.jarvisdemonim.http.HttpUtils;
-import com.jd.jarvisdemonim.utils.LogUtils;
 import com.jd.jarvisdemonim.views.CustomProgress;
+import com.jd.jdkit.elementkit.utils.log.LogUtils;
 
 import butterknife.ButterKnife;
 
@@ -20,9 +19,8 @@ import butterknife.ButterKnife;
  * Activity基类
  */
 public abstract class BaseActivity extends AppCompatActivity {
-
     private CustomProgress pd;
-    protected Context context = this;
+    protected Context mContext = this;
     private boolean cancelable = true;
     protected String TAG;
 
@@ -126,11 +124,11 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     public void initProgressDialog() {
         if (pd == null) {
-            pd = CustomProgress.show(context, context.getResources().getString(R.string.loading),
+            pd = CustomProgress.show(mContext, mContext.getResources().getString(R.string.loading),
                     cancelable, cancelable ? new DialogInterface.OnCancelListener() {
                         @Override
                         public void onCancel(DialogInterface dialog) {
-                            HttpUtils.cancelPost();
+//                            HttpUtils.cancelPost();
                         }
                     } : null);
 

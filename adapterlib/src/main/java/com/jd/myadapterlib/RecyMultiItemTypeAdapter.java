@@ -154,4 +154,11 @@ public class RecyMultiItemTypeAdapter<T> extends RecyclerView.Adapter<RecyViewHo
         mDatas.removeAll(collection);
         notifyItemRangeRemoved(position, collection.size());
     }
+
+    public void clear(){
+        if(mDatas !=null){
+            mDatas.clear();
+            notifyDataSetChanged();
+        }
+    }
 }

@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/JarvisDemoNim.iml" filepath="$PROJECT_DIR$/JarvisDemoNim.iml" />
       <module fileurl="file://$PROJECT_DIR$/adapterlib/adapterlib.iml" filepath="$PROJECT_DIR$/adapterlib/adapterlib.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jdkit/jdkit.iml" filepath="$PROJECT_DIR$/jdkit/jdkit.iml" />
       <module fileurl="file://$PROJECT_DIR$/adapterlib/myadapterlib.iml" filepath="$PROJECT_DIR$/adapterlib/myadapterlib.iml" />
       <module fileurl="file://$PROJECT_DIR$/nimkit/nimkit.iml" filepath="$PROJECT_DIR$/nimkit/nimkit.iml" />
     </modules>

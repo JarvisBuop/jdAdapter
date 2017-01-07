@@ -2,6 +2,7 @@ apply plugin: 'com.android.library'
 
 apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.JarvisBuop'
+def supportVersion = "24.2.0"
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
@@ -23,6 +24,8 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.2.0'
-    compile 'com.android.support:recyclerview-v7:24.2.0'
+    compile 'com.android.support:appcompat-v7:'+supportVersion
+    compile 'com.android.support:design:'+supportVersion
+    compile 'com.android.support:support-v4:'+supportVersion
+    compile 'com.android.support:recyclerview-v7:'+supportVersion
 }

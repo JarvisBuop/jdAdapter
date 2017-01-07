@@ -11,7 +11,7 @@ import com.jd.jarvisdemonim.entity.TestBean;
 import com.jd.jarvisdemonim.entity.TestBean2;
 import com.jd.jarvisdemonim.entity.TestBean3;
 import com.jd.jarvisdemonim.ui.testadapteractivity.adapter.TestAdapter;
-import com.jd.jarvisdemonim.utils.LogUtils;
+import com.jd.jdkit.elementkit.utils.log.LogUtils;
 import com.jd.myadapterlib.RecyMultiItemTypeAdapter;
 import com.jd.myadapterlib.dinterface.DOnItemChildClickListener;
 

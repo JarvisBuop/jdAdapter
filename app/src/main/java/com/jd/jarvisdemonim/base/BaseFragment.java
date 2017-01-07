@@ -14,9 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jd.jarvisdemonim.R;
-import com.jd.jarvisdemonim.http.HttpUtils;
-import com.jd.jarvisdemonim.utils.LogUtils;
 import com.jd.jarvisdemonim.views.CustomProgress;
+import com.jd.jdkit.elementkit.utils.log.LogUtils;
 
 import butterknife.ButterKnife;
 
@@ -108,7 +107,7 @@ public abstract class BaseFragment extends Fragment {
                     cancelable, cancelable ? new DialogInterface.OnCancelListener() {
                         @Override
                         public void onCancel(DialogInterface dialog) {
-                            HttpUtils.cancelPost();
+//                            HttpUtils.cancelPost();
                             dialogMiss = true;
                         }
                     } : null);

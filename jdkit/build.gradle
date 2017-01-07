@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+def supportVersion = "24.2.0"
+
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:'+supportVersion
+    compile 'com.android.support:design:'+supportVersion
+    compile 'com.android.support:support-v4:'+supportVersion
+    compile 'com.android.support:recyclerview-v7:'+supportVersion
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.google.code.gson:gson:2.4'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.lzy.net:okhttputils:1.8.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.google.zxing:core:3.2.1'
+    compile 'cn.finalteam:galleryfinal:1.4.8.7'
+    compile 'com.qiniu:qiniu-android-sdk:7.2.2'
+
+    //打印工具
+    compile 'com.orhanobut:logger:1.15'
+    //可能影响二维码扫描速度;
+    compile 'com.antfortune.freeline:runtime:0.5.0'
+    //leakcanary存储空间权限
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    //keytool -v -list -keystore .\app\wmyc_master.jks 获取md5码
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+}

@@ -12,16 +12,21 @@ import android.support.v7.widget.RecyclerView;
 import android.text.util.Linkify;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.widget.Checkable;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.jd.myadapterlib.dinterface.DOnItemChildCheckChangeListener;
 import com.jd.myadapterlib.dinterface.DOnItemChildClickListener;
+import com.jd.myadapterlib.dinterface.DOnItemChildLongClickListener;
+import com.jd.myadapterlib.dinterface.DOnItemChildTouchListener;
 
 /**
  * Auther: Jarvis Dong
@@ -30,7 +35,7 @@ import com.jd.myadapterlib.dinterface.DOnItemChildClickListener;
  * OverView: recyclerview viewholder
  * Usage:
  */
-public class RecyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class RecyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener,View.OnTouchListener,CompoundButton.OnCheckedChangeListener {
     private SparseArray<View> mViews;
     private View mConvertView;
     private Context mContext;
@@ -249,7 +254,11 @@ public class RecyViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         return this;
     }
 
-
+    /**
+     * 点击事件;
+     *
+     * @param viewId
+     */
     public void setItemChildClickListener(@IdRes int viewId) {
         this.getView(viewId).setOnClickListener(this);
     }
@@ -260,11 +269,75 @@ public class RecyViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         this.mOnItemChildClickListener = onItemChildClickListener;
     }
 
+    /**
+     * 长按事件;
+     *
+     * @param viewId
+     */
+    public void setItemChildLongClickListener(@IdRes int viewId) {
+        this.getView(viewId).setOnLongClickListener(this);
+    }
+
+    private DOnItemChildLongClickListener mOnItemChildLongClickListener;
+
+    public void setOnItemChildLongClickListener(DOnItemChildLongClickListener mOnItemChildLongClickListener) {
+        this.mOnItemChildLongClickListener = mOnItemChildLongClickListener;
+    }
+
+    /**
+     * 触摸事件;
+     * @param viewId
+     */
+    public void setItemChildTouchListener(@IdRes int viewId) {
+        this.getView(viewId).setOnTouchListener(this);
+    }
+
+    private DOnItemChildTouchListener mOnItemChildTouchListener;
+
+    public void setOnItemChildTouchListener(DOnItemChildTouchListener mOnItemChildTouchListener) {
+        this.mOnItemChildTouchListener = mOnItemChildTouchListener;
+    }
+
+    /**
+     * 选中事件;
+     * @param viewId
+     */
+    public void setItemChildCheckChangeListener(@IdRes int viewId) {
+        View view = this.getView(viewId);
+        if(view instanceof CompoundButton) {
+            ((CompoundButton)view).setOnCheckedChangeListener(this);
+        }
+    }
+
+    private DOnItemChildCheckChangeListener mOnItemChildCheckChangeListener;
+
+    public void setOnItemChildTouchListener(DOnItemChildCheckChangeListener mOnItemChildCheckChangeListener) {
+        this.mOnItemChildCheckChangeListener = mOnItemChildCheckChangeListener;
+    }
+
+
     @Override
     public void onClick(View v) {
         if (this.mOnItemChildClickListener != null) {
 //            Log.i("jarvisclick",getAdapterPosition()+"$"+getLayoutPosition()+"#"+getPosition());
             this.mOnItemChildClickListener.onItemChildClick(this.mConvertView, v, getAdapterPosition());
+        }
+    }
+
+    @Override
+    public boolean onLongClick(View v) {
+        return this.mOnItemChildLongClickListener != null ?this.mOnItemChildLongClickListener.onLongClick(v, this.getAdapterPosition()): false;
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        return this.mOnItemChildTouchListener !=null ?this.mOnItemChildTouchListener.onTouch(v,event,this.getAdapterPosition()):false;
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if(mOnItemChildCheckChangeListener !=null){
+            this.mOnItemChildCheckChangeListener.onCheckedChanged(buttonView,this.getAdapterPosition(),isChecked);
         }
     }
 }

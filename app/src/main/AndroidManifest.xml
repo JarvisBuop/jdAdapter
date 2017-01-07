@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jd.jarvisdemonim">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
+        android:name=".application.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,11 +17,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.NimActivity" />
         <activity android:name=".ui.testadapteractivity.NormalTestActivity" />
         <activity android:name=".ui.testadapteractivity.NormalTestBgaActivity" />
         <activity android:name=".ui.testadapteractivity.NormalTestPageActivity" />
         <activity android:name=".ui.testadapteractivity.NormalTestExpandActivity" />
         <activity android:name=".ui.testadapteractivity.NormalTestStickyActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalTextActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalTestMvcActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalTestMvcActivityNet" />
+        <activity android:name=".ui.testadapteractivity.NormalTestTabReminderActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalTextCarlendarActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalTestBottomNavigationActivity" />
     </application>
 
 </manifest>
