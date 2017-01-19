@@ -20,6 +20,7 @@ import com.jd.jdkit.reminder.ReminderManager;
 import com.jd.jdkit.reminder.ReminderSettings;
 import com.jd.jdkit.viewskit.MyFragmentTabHost;
 import com.jd.myadapterlib.delegate.RecyViewHolder;
+import com.netease.nim.uikit.common.util.log.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,8 +31,11 @@ import butterknife.Bind;
  * Auther: Jarvis Dong
  * Time: on 2017/1/6 0006
  * Name:
- * OverView:
+ * OverView:测试日历/一般app的主页切换效果/tab的消息提醒;
  * Usage:
+ * 1.普通日历;
+ * 2.fragmenttabhost切换和普通消息提醒;
+ * 3.tab的消息提醒和tab的拖拽效果仿qq;
  */
 
 public class NormalTextCarlendarActivity extends DBaseActivity implements ReminderManager.UnreadNumChangedCallback {
@@ -258,12 +262,15 @@ public class NormalTextCarlendarActivity extends DBaseActivity implements Remind
             }
         }
 
-        public void setBadgeTxt(boolean isShow, String num) {
+        public void setBadgeTxt(boolean isShow, int num) {
             if (mTxtBadge != null) {
                 if (isShow) {
-                    mTxtBadge.setText(num);
-                    if (Integer.parseInt(num) > 0) {
+                    if (num > 0 && num <= ReminderSettings.MAX_UNREAD_SHOW_NUMBER) {
                         mTxtBadge.setVisibility(View.VISIBLE);
+                        mTxtBadge.setText(String.valueOf(num));
+                    } else if (num > ReminderSettings.MAX_UNREAD_SHOW_NUMBER) {
+                        mTxtBadge.setVisibility(View.VISIBLE);
+                        mTxtBadge.setText(ReminderSettings.MAX_UNREAD_SHOW_NUMBER + "+");
                     } else {
                         mTxtBadge.setVisibility(View.GONE);
                     }
@@ -273,20 +280,6 @@ public class NormalTextCarlendarActivity extends DBaseActivity implements Remind
             }
         }
 
-        public void setBadgeTxt(boolean isShow, int num) {
-            if (mTxtBadge != null) {
-                if (isShow) {
-                    mTxtBadge.setText(String.valueOf(num));
-                    if (num > 0) {
-                        mTxtBadge.setVisibility(View.VISIBLE);
-                    } else {
-                        mTxtBadge.setVisibility(View.GONE);
-                    }
-                } else {
-                    mTxtBadge.setVisibility(View.GONE);
-                }
-            }
-        }
 
         public void setChecked(boolean isChecked) {
             if (mImgMain != null) {
@@ -320,12 +313,13 @@ public class NormalTextCarlendarActivity extends DBaseActivity implements Remind
     @Override
     public void onUnreadNumChanged(ReminderItem item) {
         int id = item.getId();
+        LogUtil.i("jarvisclick", item.getUnread() + "  read");
         //获得相应的对象,改变其数据;
         FragmentTabItem fragmentTabItem = tabItems.get(id);
         BadgeLinearLayout badgeLinearLayout = fragmentTabItem.getmLLBadge();
         if (item.getUnread() > 0 && item.getUnread() <= ReminderSettings.MAX_UNREAD_SHOW_NUMBER) {
             badgeLinearLayout.showTextBadge(String.valueOf(item.getUnread()));
-        } else if (item.getUnread() >= ReminderSettings.MAX_UNREAD_SHOW_NUMBER) {
+        } else if (item.getUnread() > ReminderSettings.MAX_UNREAD_SHOW_NUMBER) {
             badgeLinearLayout.showTextBadge("99+");
         } else {
             badgeLinearLayout.hiddenBadge();

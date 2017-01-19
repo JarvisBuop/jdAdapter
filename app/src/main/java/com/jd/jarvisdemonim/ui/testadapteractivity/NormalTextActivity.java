@@ -17,7 +17,7 @@ import butterknife.Bind;
  * Auther: Jarvis Dong
  * Time: on 2016/12/29 0029
  * Name:
- * OverView:
+ * OverView:字体跳动;
  * Usage:
  */
 public class NormalTextActivity extends BaseActivity {

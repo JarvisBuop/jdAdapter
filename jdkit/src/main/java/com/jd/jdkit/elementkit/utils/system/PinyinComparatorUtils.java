@@ -1,6 +1,6 @@
 package com.jd.jdkit.elementkit.utils.system;
 
-import com.jd.jdkit.entity.SortModelData;
+import com.jd.jdkit.entity.BaseSortIndexBean;
 
 import java.util.Comparator;
 
@@ -9,9 +9,9 @@ import java.util.Comparator;
  * @author xiaanming
  *
  */
-public class PinyinComparatorUtils implements Comparator<SortModelData> {
+public class PinyinComparatorUtils implements Comparator<BaseSortIndexBean> {
 
-	public int compare(SortModelData o1, SortModelData o2) {
+	public int compare(BaseSortIndexBean o1, BaseSortIndexBean o2) {
 		if (o1.getSortLetters().equals("@")
 				|| o2.getSortLetters().equals("#")) {
 			return -1;

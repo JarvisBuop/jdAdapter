@@ -31,6 +31,22 @@ public class ToastUtils {
 	}
 
 	/**
+	 * 显示吐司
+	 *
+	 * @param text     文本
+	 * @param duration 显示时长
+	 */
+	private static void showToast(CharSequence text, int duration) {
+		if (toast == null) {
+			toast = Toast.makeText(BaseConfig.application, text, duration);
+		} else {
+			toast.setText(text);
+			toast.setDuration(duration);
+		}
+		toast.show();
+	}
+
+	/**
 	 * 显示短时间toast
 	 * @param resId 输入string.xml的id
 	 */
@@ -79,5 +95,15 @@ public class ToastUtils {
 			return;
 		}
 		showLongToast(BaseConfig.application.getResources().getString(resId));
+	}
+
+	/**
+	 * 取消吐司显示
+	 */
+	public static void cancelToast() {
+		if (toast != null) {
+			toast.cancel();
+			toast = null;
+		}
 	}
 }

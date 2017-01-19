@@ -65,4 +65,19 @@ public class LogUtils {
             Logger.json(json);
     }
 
+    public static void dLoger(String tag, String msg) {
+        if (BaseConfig.isDebug)
+            Logger.t(tag).d(msg);
+    }
+
+    public static void eLoger(String tag, String msg) {
+        if (BaseConfig.isDebug)
+            Logger.t(tag).e(msg);
+    }
+
+    public static void jsonLoger(String tag, String json) {
+        if (BaseConfig.isDebug)
+            Logger.t(tag).json(json);
+    }
+
 }

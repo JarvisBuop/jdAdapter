@@ -25,6 +25,8 @@ import android.graphics.Rect;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Interpolator;
 
+import com.jd.jdkit.elementkit.utils.log.LogUtils;
+
 import java.util.Random;
 
 /**
@@ -63,14 +65,16 @@ public class BGAExplosionAnimator extends ValueAnimator {
         mRect = rect;
         mInvalidateRect = new Rect(mRect.left - mRect.width() * REFRESH_RATIO, mRect.top - mRect.height() * REFRESH_RATIO, mRect.right + mRect.width() * REFRESH_RATIO, mRect.bottom + mRect.height() * REFRESH_RATIO);
 
-        int partLen = 15;
+        int partLen = 5;
         mParticles = new Particle[partLen * partLen];
         Random random = new Random(System.currentTimeMillis());
         int w = bitmap.getWidth() / (partLen + 2);
         int h = bitmap.getHeight() / (partLen + 2);
         for (int i = 0; i < partLen; i++) {
             for (int j = 0; j < partLen; j++) {
-                mParticles[(i * partLen) + j] = generateParticle(bitmap.getPixel((j + 1) * w, (i + 1) * h), random);
+                //获取了黑色,getPixel()方法详情,现改为固定;
+//                mParticles[(i * partLen) + j] = generateParticle(bitmap.getPixel((j + 1) * w, (i + 1) * h), random);
+                mParticles[(i * partLen) + j] = generateParticle(mDragBadgeView.getmBadgeViewHelper().getBadgeBgColor(), random);
             }
         }
     }
@@ -112,7 +116,9 @@ public class BGAExplosionAnimator extends ValueAnimator {
             particle.advance((float) getAnimatedValue());
             if (particle.alpha > 0f) {
                 mPaint.setColor(particle.color);
-                mPaint.setAlpha((int) (Color.alpha(particle.color) * particle.alpha));
+                LogUtils.i("jarvisc", (int) (Color.alpha(particle.color) * particle.alpha) + " // " + particle.alpha);
+//                mPaint.setAlpha((int) (Color.alpha(particle.color) * particle.alpha));
+                mPaint.setAlpha((int) (200 * particle.alpha));//设置透明度;
                 canvas.drawCircle(particle.cx, particle.cy, particle.radius, mPaint);
             }
         }

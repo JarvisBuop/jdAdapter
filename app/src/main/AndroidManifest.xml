@@ -3,6 +3,7 @@
     package="com.jd.jarvisdemonim">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <application
         android:name=".application.App"
         android:allowBackup="true"
@@ -29,6 +30,10 @@
         <activity android:name=".ui.testadapteractivity.NormalTestTabReminderActivity" />
         <activity android:name=".ui.testadapteractivity.NormalTextCarlendarActivity" />
         <activity android:name=".ui.testadapteractivity.NormalTestBottomNavigationActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalTestIndexStickyActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalTestToolbarActivity" />
+        <activity android:name="com.jd.jdkit.permissionkit.PermissionsActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalTestCalendarAdapterActivity"/>
     </application>
 
 </manifest>

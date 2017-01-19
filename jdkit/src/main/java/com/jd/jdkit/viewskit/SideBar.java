@@ -68,7 +68,7 @@ public class SideBar extends View {
             paint.setTextSize(20);
             // 选中的状态
             if (i == choose) {
-                paint.setColor(Color.parseColor("#3399ff"));
+                paint.setColor(Color.parseColor("#ff0000"));
                 paint.setFakeBoldText(true);
             }
             // x坐标等于中间-字符串宽度的一半.
@@ -90,14 +90,17 @@ public class SideBar extends View {
 
         switch (action) {
             case MotionEvent.ACTION_UP:
-                setBackgroundDrawable(new ColorDrawable(0x00000000));
+                setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
                 choose = -1;//
                 invalidate();
                 if (mTextDialog != null) {
                     mTextDialog.setVisibility(View.INVISIBLE);
                 }
                 break;
-
+            case MotionEvent.ACTION_DOWN:
+                setBackgroundDrawable(new ColorDrawable(Color.parseColor("#55000000")));
+                invalidate();
+                break;
             default:
 //                setBackgroundResource(R.drawable.sidebar_background);
                 if (oldChoose != c) {

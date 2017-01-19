@@ -105,6 +105,10 @@ class BGADragBadgeView extends View {
     private boolean mDismissAble;
     private boolean mIsDragDisappear;
 
+    public BGABadgeViewHelper getmBadgeViewHelper() {
+        return mBadgeViewHelper;
+    }
+
     public BGADragBadgeView(Context context, BGABadgeViewHelper badgeViewHelper) {
         super(context);
         mWindowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);

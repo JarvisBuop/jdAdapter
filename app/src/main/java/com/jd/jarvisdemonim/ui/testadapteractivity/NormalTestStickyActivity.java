@@ -67,6 +67,7 @@ public class NormalTestStickyActivity extends BaseActivity {
     public static final int HAS_STICKY_VIEW = 2;
     public static final int NONE_STICKY_VIEW = 3;
 
+    @SuppressWarnings("unchecked")
     @Override
     protected void initVariable() {
         mRecycler.setLayoutManager(llm);

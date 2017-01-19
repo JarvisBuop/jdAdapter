@@ -1,5 +1,6 @@
 package com.jd.jdkit.elementkit.utils.system;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -8,7 +9,6 @@ import java.util.Locale;
 
 /**
  * 日期格式化工具类
- *
  */
 public class DateFormatUtils {
 
@@ -127,7 +127,7 @@ public class DateFormatUtils {
      * @param time
      * @return
      */
-    public static String long2StringByFormat(long time,SimpleDateFormat sdf) {
+    public static String long2StringByFormat(long time, SimpleDateFormat sdf) {
         Date dt = new Date(time);
         String sDateTime = sdf.format(dt);
         return sDateTime;
@@ -189,7 +189,10 @@ public class DateFormatUtils {
         return date;
     }
 
-
+    public static String Data2String(Date date) {
+        DateFormat dateInstance = SimpleDateFormat.getDateInstance();
+        return dateInstance.format(date);
+    }
 
     /**
      * 2个时间是否相差1年
@@ -256,7 +259,8 @@ public class DateFormatUtils {
 
     /**
      * 当前时间和所给时间的时间差
-      * @param date
+     *
+     * @param date
      * @return
      */
     public static String formatTimeBefore(Long date) {
@@ -292,6 +296,7 @@ public class DateFormatUtils {
 
     /**
      * 毫秒转成秒
+     *
      * @param date
      * @return
      */
@@ -301,6 +306,7 @@ public class DateFormatUtils {
 
     /**
      * 毫秒转成分钟
+     *
      * @param date
      * @return
      */
@@ -310,6 +316,7 @@ public class DateFormatUtils {
 
     /**
      * 毫秒转成小时
+     *
      * @param date
      * @return
      */
@@ -319,6 +326,7 @@ public class DateFormatUtils {
 
     /**
      * 毫秒转成天
+     *
      * @param date
      * @return
      */
@@ -328,6 +336,7 @@ public class DateFormatUtils {
 
     /**
      * 毫秒转成月
+     *
      * @param date
      * @return
      */
@@ -337,6 +346,7 @@ public class DateFormatUtils {
 
     /**
      * 毫秒转成年
+     *
      * @param date
      * @return
      */

@@ -178,11 +178,12 @@ public abstract class DBaseActivity extends AppCompatActivity {
 
     /**
      * 将fragment列表的fragment交易显示;
+     * 只是添加一个framment;
      *
      * @param fragments
      * @return
      */
-    public List<DBaseFragment> addFragments(List<DBaseFragment> fragments) {
+    private List<DBaseFragment> addFragments(List<DBaseFragment> fragments) {
         List<DBaseFragment> fragments2 = new ArrayList(fragments.size());
 
         FragmentManager fm = getSupportFragmentManager();
@@ -199,10 +200,11 @@ public abstract class DBaseActivity extends AppCompatActivity {
 
             if (fragment2 == null) {
                 fragment2 = fragment;
-                transaction.add(id, fragment);
+                if (!fragment2.isAdded()) {
+                    transaction.add(id, fragment);
+                }
                 commit = true;
             }
-
             fragments2.add(i, fragment2);
         }
 
@@ -217,6 +219,54 @@ public abstract class DBaseActivity extends AppCompatActivity {
         return fragments2;
     }
 
+    /**
+     * 添加多个fragment;
+     * 一个一个加;
+     *
+     * @param fragments
+     * @param tag
+     * @return
+     */
+    public List<DBaseFragment> addFragments(List<DBaseFragment> fragments, String tag) {
+        List<DBaseFragment> fragments2 = new ArrayList(fragments.size());
+
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction transaction = fm.beginTransaction();
+
+        DBaseFragment fragment2 = (DBaseFragment) fm.findFragmentByTag(tag);
+
+        DBaseFragment fragment = fragments.get(Integer.parseInt(tag));//总的fragment列表;
+        int id = fragment.getContainerId();
+        if (fragment2 == null) {
+            fragment2 = fragment;
+            if (!fragment2.isAdded()) {
+                transaction.add(id, fragment);
+            }
+        }
+        for (int i = 0; i < fragments.size(); i++) {
+            DBaseFragment seleltedFragment = fragments.get(i);
+            if (Integer.parseInt(tag) == i) {
+                transaction.show(seleltedFragment);
+            } else {
+                transaction.hide(seleltedFragment);
+            }
+            fragments2.add(i, fragment2);
+        }
+
+        try {
+            transaction.commitAllowingStateLoss();
+        } catch (Exception e) {
+            LogUtils.ui("baseactivity commit err");
+        }
+
+        return fragments2;
+    }
+
+    /**
+     * replace fragment;
+     * @param fragment
+     * @return
+     */
     public DBaseFragment switchContent(DBaseFragment fragment) {
         return switchContent(fragment, false);
     }

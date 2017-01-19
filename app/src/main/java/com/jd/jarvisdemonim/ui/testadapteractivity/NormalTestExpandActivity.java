@@ -55,20 +55,23 @@ public class NormalTestExpandActivity extends BaseActivity {
             public void onItemChildClick(View convertView, View view, int pos) {
                 switch (view.getId()) {
                     case R.id.btn_test:
-                        LogUtils.i("jarvisclick", pos + "+");
-                        if (beans.get(pos) instanceof TestGroupBean){
+                        if (beans.get(pos) instanceof TestGroupBean) {
                             TestGroupBean bean = (TestGroupBean) beans.get(pos);
-                            if(bean.isExpand()){//false
-                                adapter.removeExpandAll(pos+1,bean.getBean());
+                            LogUtils.i("jarvisclick", pos + "+"+bean.getContentTitle());
+                            if (bean.isExpand()) {//false
+                                adapter.removeExpandAll(pos + 1, bean.getBean());
                                 bean.setExpand(!bean.isExpand());
-                            }else {
-                                adapter.addExpandAll(pos+1,bean.getBean());
+                            } else {
+                                adapter.addExpandAll(pos + 1, bean.getBean());
                                 bean.setExpand(!bean.isExpand());
                             }
                         }
                         break;
                     case R.id.txt_two:
-                        LogUtils.i("jarvisclick", pos + "-");
+                        if (beans.get(pos) instanceof TestChildBean) {
+                            TestChildBean bean = (TestChildBean) beans.get(pos);
+                            LogUtils.i("jarvisclick", pos + "-" + bean.getContent());
+                        }
                         break;
                 }
             }
@@ -82,12 +85,12 @@ public class NormalTestExpandActivity extends BaseActivity {
         list.add(new TestChildBean("name1", "content1"));
         list.add(new TestChildBean("name2", "content2"));
         list.add(new TestChildBean("name3", "content3"));
-        TestGroupBean testGroupBean = new TestGroupBean(true, "title1",list);
+        TestGroupBean testGroupBean = new TestGroupBean(true, "title1", list);
         list2 = new ArrayList<>();
         list2.add(new TestChildBean("name11", "content11"));
         list2.add(new TestChildBean("name22", "content22"));
         list2.add(new TestChildBean("name33", "content33"));
-        TestGroupBean testGroupBean2 = new TestGroupBean(true, "title2",list2);
+        TestGroupBean testGroupBean2 = new TestGroupBean(true, "title2", list2);
 
         beans.add(testGroupBean);
         beans.addAll(testGroupBean.getBean());

@@ -30,6 +30,7 @@ import butterknife.ButterKnife;
 public abstract class DBaseFragment extends Fragment {
     private static Handler handler;
     private int containerId;
+    private String currentTag;//标记第几个fragment;
     private boolean destroyed;
     private ProgressDialog dialog;
     private boolean cancelable = true;
@@ -56,6 +57,14 @@ public abstract class DBaseFragment extends Fragment {
 
     public void setContainerId(int containerId) {
         this.containerId = containerId;
+    }
+
+    public String getCurrentTag() {
+        return currentTag;
+    }
+
+    public void setCurrentTag(String currentTag) {
+        this.currentTag = currentTag;
     }
 
     protected final Handler getHandler() {

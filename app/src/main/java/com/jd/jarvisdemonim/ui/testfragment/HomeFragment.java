@@ -70,7 +70,7 @@ public class HomeFragment extends DBaseFragment {
             @Override
             public void onClick(View v) {
                 if (mActivity instanceof NimActivity) {
-                    ((NimActivity) mActivity).setCurrentMsg(Integer.parseInt(getArguments().getString(KEY)));
+//                    ((NimActivity) mActivity).setCurrentMsg(Integer.parseInt(getArguments().getString(KEY)));
                 } else if (mActivity instanceof NormalTestTabReminderActivity) {
                     ((NormalTestTabReminderActivity) mActivity).setCurrentMsg(Integer.parseInt(getArguments().getString(KEY)));
                 }

@@ -111,7 +111,7 @@ public class ReminderManager {
             num = unreadNum;
         }
 
-        num = Math.min(ReminderSettings.MAX_UNREAD_SHOW_NUMBER, num);//设置提醒的最大值;
+//        num = Math.min(ReminderSettings.MAX_UNREAD_SHOW_NUMBER, num);//设置提醒的最大值;
 
         item.setUnread(num);
         item.setIndicator(false);

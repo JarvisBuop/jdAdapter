@@ -25,7 +25,7 @@ import butterknife.Bind;
  * Auther: Jarvis Dong
  * Time: on 2016/12/22 0022
  * Name:
- * OverView: 可拖拽;
+ * OverView: 可拖拽;头2
  * Usage:
  */
 public class NormalTestBgaActivity extends BaseActivity {

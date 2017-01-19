@@ -66,6 +66,14 @@
                 android:padding="10dp"
                 android:text="适配器\nsticky top"
                 android:textAllCaps="false" />
+            <Button
+                android:id="@+id/btn12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="适配器\n索引+吸顶"
+                android:padding="10dp"
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/btn6"
@@ -108,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="10dp"
-                android:text="bottomtab carlendar\n使用fragmenttabhost"
+                android:text="bottomtab普通carlendar\n使用fragmenttabhost"
                 android:textAllCaps="false" />
             <Button
                 android:id="@+id/btn11"
@@ -116,27 +124,23 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="10dp"
-                android:text="使用tablayout和bottomnavigation;"
+                android:text="使用tablayout MDcalendar\nbottomnavigation;"
                 android:textAllCaps="false" />
-            <Button
-                android:id="@+id/btn12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
-                android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/btn13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="10dp"
+                android:text="android权限测试"
                 android:textAllCaps="false" />
             <Button
                 android:id="@+id/btn14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="自定义适配器日历\n滑动动画"
                 android:padding="10dp"
                 android:textAllCaps="false" />
             <Button
@@ -144,6 +148,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="DBaseToolBarActivity\n测试toolbar"
                 android:padding="10dp"
                 android:textAllCaps="false" />
             <Button

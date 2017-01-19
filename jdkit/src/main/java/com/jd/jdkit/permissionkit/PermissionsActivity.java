@@ -32,13 +32,14 @@ import com.jd.jdkit.R;
  * finish();
  * }
  * }
- * @Override
- * protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+ *
+ * @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
  * super.onActivityResult(requestCode, resultCode, data);
  * if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
  * checkPermissionsResult(requestCode, resultCode);
  * }
- *
+ * <p>
+ * 注意manifest中需要注册PermissionsActivity;
  */
 public class PermissionsActivity extends AppCompatActivity {
 
@@ -48,7 +49,7 @@ public class PermissionsActivity extends AppCompatActivity {
      */
     static final String[] PERMISSIONS = new String[]{
 //            Manifest.permission.READ_CALENDAR,//WRITE_CALENDAR
-//            Manifest.permission.CAMERA,
+            Manifest.permission.CAMERA,
 //            Manifest.permission.READ_CONTACTS,//WRITE_CONTACTS，GET_ACCOUNTS
 //            Manifest.permission.ACCESS_FINE_LOCATION,//ACCESS_COARSE_LOCATION
 //            Manifest.permission.RECORD_AUDIO,
@@ -78,7 +79,8 @@ public class PermissionsActivity extends AppCompatActivity {
         ActivityCompat.startActivityForResult(activity, intent, requestCode, null);
     }
 
-    @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getIntent() == null || !getIntent().hasExtra(EXTRA_PERMISSIONS)) {
             throw new RuntimeException("PermissionsActivity需要使用静态startActivityForResult方法启动!");
@@ -89,7 +91,8 @@ public class PermissionsActivity extends AppCompatActivity {
         isRequireCheck = true;
     }
 
-    @Override protected void onResume() {
+    @Override
+    protected void onResume() {
         super.onResume();
         if (isRequireCheck) {
             String[] permissions = getPermissions();
@@ -157,14 +160,16 @@ public class PermissionsActivity extends AppCompatActivity {
 
         // 拒绝, 退出应用
         builder.setNegativeButton(R.string.quit, new DialogInterface.OnClickListener() {
-            @Override public void onClick(DialogInterface dialog, int which) {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
                 setResult(PERMISSIONS_DENIED);
                 finish();
             }
         });
 
         builder.setPositiveButton(R.string.settings, new DialogInterface.OnClickListener() {
-            @Override public void onClick(DialogInterface dialog, int which) {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
                 startAppSettings();
             }
         });

@@ -28,4 +28,11 @@ public class RegisterUuid4AppBean implements Serializable{
         this.token = token;
     }
 
+    @Override
+    public String toString() {
+        return "RegisterUuid4AppBean{" +
+                "sucflag=" + sucflag +
+                ", token='" + token + '\'' +
+                '}';
+    }
 }
