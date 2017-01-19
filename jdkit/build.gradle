@@ -1,7 +1,9 @@
 apply plugin: 'com.android.library'
 def supportVersion = "24.2.0"
-
-
+//------jitpack
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.JarvisBuop'
+//------jitpack
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
