@@ -28,7 +28,7 @@ import butterknife.OnClick;
  * Time: on 2017/1/3 0003
  * Name:
  * OverView: 多分类mvc 测试;
- * Usage:
+ * Usage: 开始测试,写了3个抽象方法;
  */
 
 public class NormalTestMvcActivity extends BaseActivity {

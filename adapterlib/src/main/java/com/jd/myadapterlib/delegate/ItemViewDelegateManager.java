@@ -16,6 +16,7 @@ public class ItemViewDelegateManager<T> {
     public ItemViewDelegateManager<T> addDelegate(ItemViewDelegate<T> delegate) {
         int viewType = delegates.size();
         if (delegate != null) {
+            //size作为键,代理类为值;
             delegates.put(viewType, delegate);
             viewType++;
         }

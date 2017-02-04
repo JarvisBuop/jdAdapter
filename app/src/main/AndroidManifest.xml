@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name=".application.App"
         android:allowBackup="true"
@@ -33,7 +35,19 @@
         <activity android:name=".ui.testadapteractivity.NormalTestIndexStickyActivity" />
         <activity android:name=".ui.testadapteractivity.NormalTestToolbarActivity" />
         <activity android:name="com.jd.jdkit.permissionkit.PermissionsActivity" />
-        <activity android:name=".ui.testadapteractivity.NormalTestCalendarAdapterActivity"/>
-    </application>
+        <activity android:name=".ui.testadapteractivity.NormalTestCalendarAdapterActivity" />
+        <!--联网观察类;-->
+        <activity android:name=".ui.testadapteractivity.NormalTestNetWorkActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalTestAnimationActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalTestLoad1Activity" />
 
+        <!--&lt;!&ndash;静态注册的广播&ndash;&gt;-->
+        <!--<receiver-->
+            <!--android:name="com.jd.jarvisdemonim.ui.testadapteractivity.MyNetWorkReceiver"-->
+            <!--android:label="NetworkConnection">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+    </application>
 </manifest>

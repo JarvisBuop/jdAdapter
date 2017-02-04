@@ -14,7 +14,8 @@ import com.orhanobut.logger.Logger;
  */
 public class LogUtils {
     private static final String TAG = BaseConfig.httpTag;
-    private static boolean isDebug = true;
+    private static boolean isDebug = BaseConfig.isDebug;
+//    private static boolean isDebug = true;
 
     public static void setLog(boolean isLog) {
         isDebug = isLog;

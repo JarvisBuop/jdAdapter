@@ -10,10 +10,11 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        AppInitUtils.getInstance().setApplication(this).isDebug()
+        AppInitUtils.getInstance().setApplication(this)
                 .initGson()
                 .initOkHttp()
                 //调试
+                .isDebug()
                 .initFreelineCore()
                 .initLeakCanary()
                 .initLogger()

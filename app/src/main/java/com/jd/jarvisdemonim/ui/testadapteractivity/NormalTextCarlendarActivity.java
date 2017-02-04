@@ -96,8 +96,13 @@ public class NormalTextCarlendarActivity extends DBaseActivity implements Remind
                     FragmentTabItem tabitem = tabItems.get(i);
                     if (tabIdSele.equals(tabitem.getTitleString())) {
                         tabitem.setChecked(true);
-                        ReminderManager.getInstance().upDateUnReadNum(i, true, 0);//清除提醒;
-                        tabitem.getmLLBadge().hiddenBadge();
+                        /**
+                         * 参数一:提醒的数字;
+                         * 参数二:直接覆盖;
+                         * 参数三:提醒的是哪个tab;
+                         */
+                        ReminderManager.getInstance().upDateUnReadNum(i, true, 0);
+                        tabitem.getmLLBadge().hiddenBadge();//清除提醒;
                     } else {
                         tabitem.setChecked(false);
                     }

@@ -2,13 +2,6 @@ package com.jd.jarvisdemonim.ui.testadapteractivity.model;
 
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- * 作　　者: guyj
- * 修改日期: 2016/12/23
- * 描　　述:
- * 备　　注:
- */
 public class MultiListImpl implements MultiListModel {
     private List<Object> beans;
     @Override
