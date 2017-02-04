@@ -7,11 +7,12 @@
 
 ----
 #*项目简介:*
-##1. adapterlib
+##<font face="黑体" size=6 color=#f00>1. adapterlib</font>
 结合鸿洋和BGA 适配器的写法Adapter;
+新增了一个上啦加载,注意本地数据使用handler或post方法;
 
 采用代理类实现多类型的item布局;设置每个childView的监听事件(点击);
-##2. jdkit
+##<font face="黑体" size=6 color=#f00>2. jdkit</font>
 集合的工具类;
 
 <table>
@@ -21,7 +22,7 @@
 </table>
 
 ----
-#test markdown
+#<font face="黑体" size=6 color=#0ff>Test MarkDown</font>
 ----
 * red
 * green
@@ -82,7 +83,7 @@ __设置图片(参考式和行内式)__
 
 
 
-#A Keyword:
+<font face="黑体" color=#ff0000 size=5>A Keyword:</font>
 
 	We believe that writing is about content, about what you want to say – not about fancy formatting. 
 	我们坚信写作写的是内容，所思所想，而不是花样格式。
