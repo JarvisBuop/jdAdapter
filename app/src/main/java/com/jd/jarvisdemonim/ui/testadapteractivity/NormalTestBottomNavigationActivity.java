@@ -26,7 +26,7 @@ import butterknife.Bind;
  * Time: on 2017/1/6 0006
  * Name:
  * OverView:
- * Usage:含有md calendar;
+ * Usage:含有md calendar; fragment的切换,一个个的添加;
  */
 
 public class NormalTestBottomNavigationActivity extends DBaseActivity implements BottomNavigationBar.OnTabSelectedListener {

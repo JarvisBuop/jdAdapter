@@ -16,6 +16,7 @@ import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestBottomNavigationAct
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestCalendarAdapterActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestExpandActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestIndexStickyActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestLazyFragmentActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestLoad1Activity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestMvcActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestMvcActivityNet;
@@ -70,7 +71,7 @@ public class MainActivity extends BaseActivity {
     private void doLoadData() {
         mList.add("测试联网");
         mList.add("测试单布局加载更多");
-        mList.add("测试多布局加载更多");
+        mList.add("测试fragment的懒加载");
     }
 
     @Override
@@ -105,7 +106,7 @@ public class MainActivity extends BaseActivity {
                                 startActivity(new Intent(mContext,NormalTestLoad1Activity.class));
                                 break;
                             case 2:
-
+                                startActivity(new Intent(mContext,NormalTestLazyFragmentActivity.class));
                                 break;
                             case 3:
 

@@ -40,6 +40,7 @@
         <activity android:name=".ui.testadapteractivity.NormalTestNetWorkActivity" />
         <activity android:name=".ui.testadapteractivity.NormalTestAnimationActivity" />
         <activity android:name=".ui.testadapteractivity.NormalTestLoad1Activity" />
+        <activity android:name=".ui.testadapteractivity.NormalTestLazyFragmentActivity" />
 
         <!--&lt;!&ndash;静态注册的广播&ndash;&gt;-->
         <!--<receiver-->

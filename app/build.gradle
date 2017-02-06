@@ -5,7 +5,7 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
 //    buildToolsVersion buildToolsVer
-    useLibrary 'org.apache.http.legacy'
+//    useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
         applicationId "com.jd.jarvisdemonim"
