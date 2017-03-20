@@ -7,16 +7,16 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.jd.jarvisdemonim.R;
-import com.jd.jarvisdemonim.ui.testadapteractivity.adapter.TestStickyAndIndexAdapter;
-import com.jd.jarvisdemonim.ui.testadapteractivity.model.BaseModelList;
-import com.jd.jarvisdemonim.ui.testadapteractivity.model.StickyIndexBean;
-import com.jd.jarvisdemonim.ui.testadapteractivity.model.StickyIndexImpl;
+import com.jd.jarvisdemonim.ui.adapter.TestStickyAndIndexAdapter;
+import com.jd.jarvisdemonim.ui.model.BaseModelList;
+import com.jd.jarvisdemonim.ui.model.StickyIndexBean;
+import com.jd.jarvisdemonim.ui.controller.StickyIndexImpl;
 import com.jd.jdkit.elementkit.activity.DBaseActivity;
 import com.jd.jdkit.elementkit.utils.log.LogUtils;
-import com.jd.jdkit.elementkit.utils.system.CharacterParserUtils;
+import com.jd.jdkit.elementkit.utils.system.PinyinUtils;
 import com.jd.jdkit.elementkit.utils.system.PinyinComparatorUtils;
 import com.jd.jdkit.elementkit.utils.system.ToastUtils;
-import com.jd.jdkit.entity.ModelImpl;
+import com.jd.jdkit.IInterface.mvc.ModelImpl;
 import com.jd.jdkit.okhttp.IOnHttpListener;
 import com.jd.jdkit.viewskit.SideBar;
 import com.jd.myadapterlib.RecyMultiItemTypeAdapter;
@@ -50,7 +50,7 @@ public class NormalTestIndexStickyActivity extends DBaseActivity implements IOnH
     TextView mTxtIndex;
 
     List<Object> mDatas;
-    CharacterParserUtils characterParserUtils;
+    PinyinUtils characterParserUtils;
     PinyinComparatorUtils pinyinComparatorUtils;
     LinearLayoutManager linearLayoutManager;
     TestStickyAndIndexAdapter mAdapter;
@@ -66,7 +66,7 @@ public class NormalTestIndexStickyActivity extends DBaseActivity implements IOnH
     @Override
     protected void initView(Bundle savedInstanceState) {
         mDatas = new ArrayList<>();
-        characterParserUtils = CharacterParserUtils.getInstance();
+        characterParserUtils = PinyinUtils.getInstance();
         pinyinComparatorUtils = new PinyinComparatorUtils();
         linearLayoutManager = new LinearLayoutManager(this);
         mAdapter = new TestStickyAndIndexAdapter(mRecycler, R.layout.item_sticky, mDatas);

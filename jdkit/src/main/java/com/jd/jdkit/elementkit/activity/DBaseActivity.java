@@ -331,7 +331,7 @@ public abstract class DBaseActivity extends AppCompatActivity {
         if (dialog != null && dialog.isShowing()) return;
         dialog = new ProgressDialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setCanceledOnTouchOutside(true);
+        dialog.setCanceledOnTouchOutside(false);//true外部触摸可取消
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         dialog.setMessage(mContext.getResources().getString(R.string.loading));
         dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {

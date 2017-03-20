@@ -9,7 +9,7 @@ import com.jd.jarvisdemonim.R;
 import com.jd.jarvisdemonim.base.BaseActivity;
 import com.jd.jarvisdemonim.entity.TestChildBean;
 import com.jd.jarvisdemonim.entity.TestGroupBean;
-import com.jd.jarvisdemonim.ui.testadapteractivity.adapter.TestExpandAdapter;
+import com.jd.jarvisdemonim.ui.adapter.TestExpandAdapter;
 import com.jd.jdkit.elementkit.utils.log.LogUtils;
 import com.jd.myadapterlib.dinterface.DOnItemChildClickListener;
 

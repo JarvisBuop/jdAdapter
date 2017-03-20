@@ -66,6 +66,16 @@ public class AppInitUtils {
     public Application getApplication() {
         return application;
     }
+
+    /**
+     * 是否可用;
+     *
+     * @return
+     */
+    public boolean isInitLogger() {
+        return isInitLogger;
+    }
+
     /**
      * 开放获取debug对象
      */

@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 /**
  * normal viewholder
+ * 改成兼容模式,使用时需要造型;
  */
 public class ViewHolder
 {

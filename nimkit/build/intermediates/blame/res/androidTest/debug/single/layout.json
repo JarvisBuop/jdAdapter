@@ -144,12 +144,12 @@
         "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\layout\\design_text_input_password_icon.xml"
     },
     {
-        "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_list_menu_item_icon.xml",
-        "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\abc_list_menu_item_icon.xml"
-    },
-    {
         "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_search_view.xml",
         "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
         "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\abc_action_menu_item_layout.xml",

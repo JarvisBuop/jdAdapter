@@ -10,11 +10,11 @@ import android.widget.Button;
 
 import com.jd.jarvisdemonim.R;
 import com.jd.jarvisdemonim.base.BaseActivity;
-import com.jd.jarvisdemonim.ui.testadapteractivity.adapter.MultiListAdapter;
-import com.jd.jarvisdemonim.ui.testadapteractivity.model.ContentBean;
-import com.jd.jarvisdemonim.ui.testadapteractivity.model.MultiListImpl;
-import com.jd.jarvisdemonim.ui.testadapteractivity.model.MultiListModel;
-import com.jd.jarvisdemonim.ui.testadapteractivity.model.TitleBean;
+import com.jd.jarvisdemonim.ui.adapter.MultiListAdapter;
+import com.jd.jarvisdemonim.ui.model.ContentBean;
+import com.jd.jarvisdemonim.ui.controller.MultiListImpl;
+import com.jd.jarvisdemonim.ui.controller.MultiListModel;
+import com.jd.jarvisdemonim.ui.model.TitleBean;
 import com.jd.jdkit.elementkit.utils.system.ToastUtils;
 import com.jd.myadapterlib.dinterface.DOnItemChildClickListener;
 

@@ -1,6 +1,7 @@
 package com.jd.myadapterlib.delegate;
 
 import android.support.v4.util.SparseArrayCompat;
+import android.support.v7.widget.RecyclerView;
 
 
 /**
@@ -67,7 +68,7 @@ public class ItemViewDelegateManager<T> {
         throw new IllegalArgumentException(
                 "No ItemViewDelegate added that matches position=" + position + " in data source");
     }
-
+    //使用的holder是listview和gridview
     public void convert(ViewHolder holder, T item, int position) {
         int delegatesCount = delegates.size();
         for (int i = 0; i < delegatesCount; i++) {
@@ -82,7 +83,8 @@ public class ItemViewDelegateManager<T> {
                 "No ItemViewDelegateManager added that matches position=" + position + " in data source");
     }
 
-    public void convert(RecyViewHolder holder, T item, int position) {
+    //使用的holder是recyclerview的holder;现改成兼容;
+    public void convert(RecyclerView.ViewHolder holder, T item, int position) {
         int delegatesCount = delegates.size();
         for (int i = 0; i < delegatesCount; i++) {
             ItemViewDelegate<T> delegate = delegates.valueAt(i);

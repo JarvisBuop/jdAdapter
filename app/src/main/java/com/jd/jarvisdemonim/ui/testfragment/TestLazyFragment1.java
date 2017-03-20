@@ -48,14 +48,22 @@ public class TestLazyFragment1 extends DBaseLazyFragment {
      * 需要懒加载的部分,联网代码;
      */
     @Override
-    protected void initData() {
+    protected void initData(boolean isNeed) {
         LogUtils.i("DBaseLazyFragment", this.getClass().getSimpleName() + "初始化了");
         String string = getArguments().getString(KEY);
-        textView.setText(string);
-        Random random = new Random();
-        int i1 = random.nextInt(255);
-        int i2 = random.nextInt(255);
-        int i3 = random.nextInt(255);
-        textView.setBackgroundColor(Color.rgb(i1, i2, i3));
+        if (isNeed) {
+            textView.setText(string);
+            Random random = new Random();
+            int i1 = random.nextInt(255);
+            int i2 = random.nextInt(255);
+            int i3 = random.nextInt(255);
+            textView.setBackgroundColor(Color.rgb(i1, i2, i3));
+        }else {
+            if (textView != null) {
+                textView.setText("");
+                textView.setBackgroundColor(Color.WHITE);
+            }
+        }
     }
+
 }

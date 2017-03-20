@@ -87,7 +87,6 @@ public class NormalTestBottomNavigationActivity extends DBaseActivity implements
     }
 
     /**
-     * 貌似bottomnavigationItem 改变不了图片,图片会全部显示背景;
      */
     private void bnbRefresh() {
         mBnb.clearAll();

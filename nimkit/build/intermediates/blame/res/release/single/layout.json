@@ -304,12 +304,12 @@
         "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\release\\layout\\nim_watch_media_download_progress_layout.xml",
-        "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\res\\layout\\nim_watch_media_download_progress_layout.xml"
-    },
-    {
         "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\release\\layout\\abc_search_dropdown_item_icons_2line.xml",
         "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\release\\layout\\nim_watch_media_download_progress_layout.xml",
+        "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\res\\layout\\nim_watch_media_download_progress_layout.xml"
     },
     {
         "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\release\\layout\\nim_custom_dialog_list_item.xml",

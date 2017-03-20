@@ -3,14 +3,18 @@ package com.jd.jarvisdemonim.ui.testadapteractivity;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.jd.jarvisdemonim.R;
 import com.jd.jdkit.elementkit.activity.DBaseActivity;
+import com.jd.jdkit.elementkit.utils.system.NetworkUtil;
+import com.jd.jdkit.elementkit.utils.system.ToastyUtils;
 import com.jd.jdkit.reminder.ReminderItem;
 import com.jd.jdkit.reminder.ReminderManager;
 
 import butterknife.Bind;
+import butterknife.OnClick;
 
 /**
  * Auther: Jarvis Dong
@@ -56,7 +60,7 @@ public class NormalTestNetWorkActivity extends DBaseActivity implements Reminder
                 txtNet.setText("手机网络不可用");
                 break;
             case 1:
-                txtNet.setText("wifi连接成功");
+                txtNet.setText("wifi连接成功"+ NetworkUtil.wifiSSID(this));
                 break;
             case 2:
                 txtNet.setText("未知");
@@ -91,11 +95,11 @@ public class NormalTestNetWorkActivity extends DBaseActivity implements Reminder
      * 注册网络广播;
      */
     private void registerNetWork(boolean register) {
-        if(register){
+        if (register) {
             IntentFilter filter = new IntentFilter();
             filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-            mContext.registerReceiver(myNetWorkReceiver,filter);
-        }else{
+            mContext.registerReceiver(myNetWorkReceiver, filter);
+        } else {
             mContext.unregisterReceiver(myNetWorkReceiver);
         }
     }
@@ -105,5 +109,26 @@ public class NormalTestNetWorkActivity extends DBaseActivity implements Reminder
         super.onDestroy();
         registerMsgUnreadInfoObserver(false);
         registerNetWork(false);
+    }
+
+    @OnClick({R.id.toast1, R.id.toast2, R.id.toast3, R.id.toast4, R.id.toast5})
+    void click(View v) {
+        switch (v.getId()) {
+            case R.id.toast1:
+                ToastyUtils.showInfo("INFO");
+                break;
+            case R.id.toast2:
+                ToastyUtils.showErr("ERR");
+                break;
+            case R.id.toast3:
+                ToastyUtils.showWarning("WARNING");
+                break;
+            case R.id.toast4:
+                ToastyUtils.showNormal("NORMAL");
+                break;
+            case R.id.toast5:
+                ToastyUtils.showSuccess("SUCCESS");
+                break;
+        }
     }
 }

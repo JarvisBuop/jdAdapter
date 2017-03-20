@@ -10,23 +10,38 @@ import android.view.View;
 import com.jd.jarvisdemonim.R;
 import com.jd.jarvisdemonim.base.BaseActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestAidlActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestAnimationActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestBgaActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestBinderPoolActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestBottomNavigationActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestCalendarAdapterActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestContentProviderActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestExpandActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestGreenDaoActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestIndexStickyActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestLazyFragmentActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestLoad1Activity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestMDActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestMessengerActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestMultiGreenDaoActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestMvcActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestMvcActivityNet;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestMvpActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestNetWorkActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestPageActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestRetrofitActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestScrollConflictActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestSocketActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestSocketUDPActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestStickyActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestTabReminderActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestToolbarActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestXRecyActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTextActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTextCarlendarActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.TestCustomView.NormalTestCustomTouchActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.TestCustomView.NormalTestCustomViewActivity;
 import com.jd.jdkit.elementkit.utils.system.ToastUtils;
 import com.jd.jdkit.permissionkit.CheckPermissionsForAPI23;
 import com.jd.jdkit.permissionkit.PermissionsActivity;
@@ -69,9 +84,24 @@ public class MainActivity extends BaseActivity {
     }
 
     private void doLoadData() {
-        mList.add("测试联网");
+        mList.add("测试联网和Toasty");
         mList.add("测试单布局加载更多");
         mList.add("测试fragment的懒加载");
+        mList.add("测试GreenDao的使用");
+        mList.add("测试GreenDao多布局的使用");
+        mList.add("测试Retrofit下载数据");
+        mList.add("测试MVP模式");
+        mList.add("测试约束CoordernatorLayout布局及简单MD设计");
+        mList.add("测试XRecyclerView,好看的刷新和加载UI");
+        mList.add("测试自定义View的使用");
+        mList.add("测试事件分发的过程");
+        mList.add("测试IPC机制:Aidl进程间的通信,一个app启动另一个app");
+        mList.add("测试IPC机制:Messager进程间的通信,实现不同app间的通信(基本数据类型)");
+        mList.add("测试IPC机制:ContentProvider的数据共享");
+        mList.add("测试IPC机制:Socket 的进程间通信 TCP Server");
+        mList.add("测试IPC机制:Socket 的进程间通信 UDP Server");
+        mList.add("测试IPC机制AIDL优化:Binder连接池,实现一个service和多个aidl;");
+        mList.add("测试滑动冲突的优化,事件分发;");
     }
 
     @Override
@@ -83,7 +113,8 @@ public class MainActivity extends BaseActivity {
 //            @Override
 //            public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
 //                super.onDraw(c, parent, state);
-//                c.drawColor(Color.WHITE);
+//                c.drawColor(Color.BLUE);//需要item的布局设置背景色;
+//
 //            }
 //
 //            @Override
@@ -103,13 +134,55 @@ public class MainActivity extends BaseActivity {
                                 startActivity(new Intent(mContext, NormalTestNetWorkActivity.class));
                                 break;
                             case 1:
-                                startActivity(new Intent(mContext,NormalTestLoad1Activity.class));
+                                startActivity(new Intent(mContext, NormalTestLoad1Activity.class));
                                 break;
                             case 2:
-                                startActivity(new Intent(mContext,NormalTestLazyFragmentActivity.class));
+                                startActivity(new Intent(mContext, NormalTestLazyFragmentActivity.class));
                                 break;
                             case 3:
-
+                                startActivity(new Intent(mContext, NormalTestGreenDaoActivity.class));
+                                break;
+                            case 4:
+                                startActivity(new Intent(mContext, NormalTestMultiGreenDaoActivity.class));
+                                break;
+                            case 5:
+                                startActivity(new Intent(mContext, NormalTestRetrofitActivity.class));
+                                break;
+                            case 6:
+                                startActivity(new Intent(mContext, NormalTestMvpActivity.class));
+                                break;
+                            case 7:
+                                startActivity(new Intent(mContext, NormalTestMDActivity.class));
+                                break;
+                            case 8:
+                                startActivity(new Intent(mContext, NormalTestXRecyActivity.class));
+                                break;
+                            case 9:
+                                startActivity(new Intent(mContext, NormalTestCustomViewActivity.class));
+                                break;
+                            case 10:
+                                startActivity(new Intent(mContext, NormalTestCustomTouchActivity.class));
+                                break;
+                            case 11:
+                                startActivity(new Intent(mContext, NormalTestAidlActivity.class));
+                                break;
+                            case 12:
+                                startActivity(new Intent(mContext, NormalTestMessengerActivity.class));
+                                break;
+                            case 13:
+                                startActivity(new Intent(mContext, NormalTestContentProviderActivity.class));
+                                break;
+                            case 14:
+                                startActivity(new Intent(mContext, NormalTestSocketActivity.class));
+                                break;
+                            case 15:
+                                startActivity(new Intent(mContext, NormalTestSocketUDPActivity.class));
+                                break;
+                            case 16:
+                                startActivity(new Intent(mContext, NormalTestBinderPoolActivity.class));
+                                break;
+                            case 17:
+                                startActivity(new Intent(mContext, NormalTestScrollConflictActivity.class));
                                 break;
                         }
                         break;
@@ -119,7 +192,7 @@ public class MainActivity extends BaseActivity {
     }
 
     @OnClick({R.id.txt_nim, R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4, R.id.btn5, R.id.btn6, R.id.btn7
-            , R.id.btn8, R.id.btn9, R.id.btn10, R.id.btn11, R.id.btn12, R.id.btn13, R.id.btn14, R.id.btn15,R.id.btn16})
+            , R.id.btn8, R.id.btn9, R.id.btn10, R.id.btn11, R.id.btn12, R.id.btn13, R.id.btn14, R.id.btn15, R.id.btn16})
     void onclick(View view) {
         switch (view.getId()) {
             case R.id.txt_nim:

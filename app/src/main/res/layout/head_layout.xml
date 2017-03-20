@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/drawer_left"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/img_head"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/room" />
+
+        <TextView
+            android:id="@+id/menu1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/head_icon_1"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="热门信息"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/menu2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/head_icon_2"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="最新消息"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/menu3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/head_icon_3"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="我的信息"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

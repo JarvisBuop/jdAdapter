@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.jd.jarvisdemonim"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--继承-->
+    <com.jd.jarvisdemonim.ui.testadapteractivity.TestCustomView.CustomView1
+        android:id="@+id/custom1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        tools:text="123" />
+    <!--组合-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.jd.jarvisdemonim.ui.testadapteractivity.TestCustomView.CustomView33
+            android:id="@+id/custom33_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.jd.jarvisdemonim.ui.testadapteractivity.TestCustomView.CustomView33
+            android:id="@+id/custom33_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <!--自绘-->
+
+    <com.jd.jarvisdemonim.ui.testadapteractivity.TestCustomView.CustomView2
+        android:id="@+id/custom2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
+        custom:textBg="@drawable/ic_gf_camera"
+        custom:textContent="1234567"
+        custom:textContentColor="@color/blue_alpha"
+        custom:textContentSize="10sp" />
+
+    <com.jd.jarvisdemonim.ui.testadapteractivity.TestCustomView.CustomView22
+        android:id="@+id/custom22"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/orange_alpha">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center_vertical"
+            android:background="@color/blue_alpha"
+            android:text="test1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/blue_alpha"
+            android:text="test2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/blue_alpha"
+            android:text="test3" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_alpha"
+            android:text="test4" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/blue_alpha"
+            android:text="test5" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/blue_alpha"
+            android:text="test6" />
+
+    </com.jd.jarvisdemonim.ui.testadapteractivity.TestCustomView.CustomView22>
+
+</LinearLayout>

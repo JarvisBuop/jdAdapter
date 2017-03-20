@@ -68,12 +68,12 @@
         "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\color\\abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_tint_edittext.xml",
-        "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\color\\abc_tint_edittext.xml"
-    },
-    {
         "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_primary_text_material_light.xml",
         "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_tint_edittext.xml",
+        "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\color\\abc_tint_edittext.xml"
     },
     {
         "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\abc_btn_colored_borderless_text_material.xml",

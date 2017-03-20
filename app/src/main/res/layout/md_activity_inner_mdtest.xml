@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorlayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/orange_alpha"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tablayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/orange_alpha"
+            app:tabIndicatorHeight="2dp"
+            app:tabMode="fixed" />
+    </android.support.design.widget.AppBarLayout>
+
+    <!--<com.jcodecraeer.xrecyclerview.XRecyclerView-->
+    <!--android:id="@+id/reccler2"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/reccler2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_behavior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:src="@drawable/ic_gf_done"
+        app:backgroundTint="@color/blue_alpha"
+        app:backgroundTintMode="src_in"
+        app:elevation="5dp"
+        app:fabSize="normal"
+        app:layout_behavior="com.jd.jarvisdemonim.ui.behavior.FirstBehavior"
+        app:rippleColor="@color/orange_alpha" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_gf_camera"
+        app:backgroundTint="@color/blue_alpha"
+        app:backgroundTintMode="src_in"
+        app:elevation="5dp"
+        app:fabSize="normal"
+        app:rippleColor="@color/orange_alpha" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_behavior3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_gf_camera"
+        app:backgroundTint="@color/blue_alpha"
+        app:backgroundTintMode="src_in"
+        app:elevation="5dp"
+        app:fabSize="normal"
+        app:layout_behavior="com.jd.jarvisdemonim.ui.behavior.RotateBehavior"
+        app:rippleColor="@color/orange_alpha" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_behavior2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_gf_done"
+        app:backgroundTint="@color/blue_alpha"
+        app:backgroundTintMode="src_in"
+        app:elevation="5dp"
+        app:fabSize="normal"
+        app:layout_behavior="com.jd.jarvisdemonim.ui.behavior.HideBehavior"
+        app:rippleColor="@color/orange_alpha" />
+
+</android.support.design.widget.CoordinatorLayout>

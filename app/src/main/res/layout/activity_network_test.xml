@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/txt_network"
@@ -9,4 +10,40 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:padding="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/toast1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="toast_info" />
+
+        <Button
+            android:id="@+id/toast2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="toast_error" />
+
+        <Button
+            android:id="@+id/toast3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="toast_warning" />
+
+        <Button
+            android:id="@+id/toast4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="toast_normal" />
+
+        <Button
+            android:id="@+id/toast5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="toast_success" />
+    </LinearLayout>
 </LinearLayout>

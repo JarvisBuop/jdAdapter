@@ -62,4 +62,10 @@
         <item name="android:textColor">#ff000000</item>
         <item name="android:textSize">16sp</item>
     </style>
+
+    <!--toolbar使用-->
+    <!--<style name="toolbar_pop" parent="@style/ThemeOverlay.AppCompat">-->
+    <style name="toolbar_pop">
+        <item name="android:colorBackground">@color/orange_alpha</item>
+    </style>
 </resources>

@@ -7,10 +7,10 @@ import android.widget.TextView;
 
 import com.jd.jarvisdemonim.R;
 import com.jd.jarvisdemonim.base.BaseActivity;
-import com.jd.jarvisdemonim.ui.testadapteractivity.model.RegisModelImpl;
-import com.jd.jarvisdemonim.ui.testadapteractivity.model.RegisterUuid4AppBean;
+import com.jd.jarvisdemonim.ui.controller.RegisModelImpl;
+import com.jd.jarvisdemonim.ui.model.RegisterUuid4AppBean;
 import com.jd.jdkit.elementkit.utils.log.LogUtils;
-import com.jd.jdkit.entity.ModelImpl;
+import com.jd.jdkit.IInterface.mvc.ModelImpl;
 import com.jd.jdkit.okhttp.IOnHttpListener;
 import com.lzy.okhttputils.model.HttpParams;
 
@@ -54,6 +54,11 @@ public class NormalTestMvcActivityNet extends BaseActivity {
 
     }
 
+    /**
+     * 此处与mvp模式的区别:
+     * mvp 是presenter通过model的接口下载到的数据,presenter中再通过view的接口去处理,直接传给activity的设置view层,将view层和model层分离;
+     * mvc 是controller通过model的接口下载数据,直接回传到activity,view层和model层亦可以交互;
+     */
     @OnClick(R.id.btn_retry)
     public void onClick() {
         btnRetry.setVisibility(View.GONE);

@@ -1,7 +1,6 @@
 package com.jd.myadapterlib;
 
 import android.content.Context;
-import android.os.Handler;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -21,7 +20,7 @@ import java.util.List;
  * Time: on 2017/2/3 0003
  * Name:
  * OverView:使用于加载更多的适配器,多布局或单布局都可;
- * Usage:
+ * Usage: 特别注意外层是scrollview的时候,设置加载更多没有作用;
  */
 
 public abstract class RecyLoadAdapter<T> extends RecyMultiItemTypeAdapter<T> {
@@ -31,13 +30,13 @@ public abstract class RecyLoadAdapter<T> extends RecyMultiItemTypeAdapter<T> {
     protected List<T> mDatas;
     protected LayoutInflater mInflater;
     protected int mLayoutId;
-    private Handler mHandler;//使用于OnBindViewHolder的时候再调用NotifydatasetChanged时会报错,采用handler类消息队列;
-
     private View mLoadMoreView;
     private int mLoadMoreLayoutId;
+    private boolean isEnable = false;
+    private boolean isCompleted = false;
 
     private boolean hasLoadMore() {
-        return mLoadMoreView != null || mLoadMoreLayoutId != 0;
+        return mLoadMoreView != null || mLoadMoreLayoutId != 0 && !isCompleted;
     }
 
     private boolean isShowLoadMore(int position) {
@@ -47,9 +46,9 @@ public abstract class RecyLoadAdapter<T> extends RecyMultiItemTypeAdapter<T> {
     @Override
     public int getItemViewType(int position) {
         if (isShowLoadMore(position)) {
-            return ITEM_TYPE_LOAD_MORE;
+            return ITEM_TYPE_LOAD_MORE;//添加了一个布局,且不需代理;
         } else {
-            return super.getItemViewType(position);//添加了一个布局,且不需代理;
+            return super.getItemViewType(position);
         }
     }
 
@@ -82,9 +81,10 @@ public abstract class RecyLoadAdapter<T> extends RecyMultiItemTypeAdapter<T> {
             }
 
             @Override
-            public void convert(RecyViewHolder holder, T t, int position) {
+            public void convert(RecyclerView.ViewHolder holder, T t, int position) {
                 if (mListener != null) {
-                    mListener.itemConvert(holder, t, position);
+                    if (holder instanceof RecyViewHolder)
+                        mListener.itemConvert((RecyViewHolder) holder, t, position);
                 }
             }
         });
@@ -126,23 +126,28 @@ public abstract class RecyLoadAdapter<T> extends RecyMultiItemTypeAdapter<T> {
             }
             return holder;
         }
-        return super.onCreateViewHolder(parent, viewType);
+        //设置加载更多的适配器只能是recyviewholder可以用;
+        return (RecyViewHolder) super.onCreateViewHolder(parent, viewType);
     }
 
     @Override
-    public void onBindViewHolder(RecyViewHolder holder, int position) {
-        if (isShowLoadMore(position)) {
-            if (mOnLoadMoreListener != null) {
-                mRecyclerView.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        mOnLoadMoreListener.onLoadMoreRequested();
-                    }
-                });
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        if (holder instanceof RecyViewHolder) {
+            if (isShowLoadMore(position)) {
+                if (mOnLoadMoreListener != null) {
+                    mRecyclerView.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            mOnLoadMoreListener.onLoadMoreRequested();
+                        }
+                    });
+                }
+                return;
             }
-            return;
+            super.onBindViewHolder(holder, position);
+        } else {
+            throw new ClassCastException("holder can not convert to RecyViewHolder");
         }
-        super.onBindViewHolder(holder, position);
     }
 
     @Override
@@ -172,7 +177,7 @@ public abstract class RecyLoadAdapter<T> extends RecyMultiItemTypeAdapter<T> {
 
 
     @Override
-    public void onViewAttachedToWindow(RecyViewHolder holder) {
+    public void onViewAttachedToWindow(RecyclerView.ViewHolder holder) {
         super.onViewAttachedToWindow(holder);
 
         if (isShowLoadMore(holder.getLayoutPosition())) {
@@ -211,7 +216,8 @@ public abstract class RecyLoadAdapter<T> extends RecyMultiItemTypeAdapter<T> {
     }
 
     public RecyLoadAdapter setLoadMoreView(boolean isdefault) {
-        if (isdefault) {
+        isEnable = isdefault;
+        if (isEnable) {
             mLoadMoreView = LayoutInflater.from(mContext).inflate(R.layout.default_loading, mRecyclerView, false);
         } else {
             mLoadMoreView = null;
@@ -220,14 +226,35 @@ public abstract class RecyLoadAdapter<T> extends RecyMultiItemTypeAdapter<T> {
         return this;
     }
 
-    public RecyLoadAdapter setLoadMoreView(View loadMoreView) {
-        mLoadMoreView = loadMoreView;
-        return this;
+    //    public RecyLoadAdapter setLoadMoreView(View loadMoreView) {
+//        mLoadMoreView = loadMoreView;
+//        return this;
+//    }
+//
+//    public RecyLoadAdapter setLoadMoreView(int layoutId) {
+//        mLoadMoreView = null;
+//        mLoadMoreLayoutId = layoutId;
+//        return this;
+//    }
+
+    public void setLoadCompleted(boolean isCompleted) {
+        this.isCompleted = isCompleted;
+        if (isEnable) {//可用刷新;
+            if (mLoadMoreView == null) {
+                throw new IllegalArgumentException("mLoadMoreView must be init");
+            }
+            View noMore = mLoadMoreView.findViewById(R.id.load_more_load_end_view);
+            View hasMore = mLoadMoreView.findViewById(R.id.load_more_view);
+            if (isCompleted) {
+                hasMore.setVisibility(View.GONE);
+                noMore.setVisibility(View.VISIBLE);
+            } else {
+                noMore.setVisibility(View.GONE);
+                hasMore.setVisibility(View.VISIBLE);
+            }
+        } else {
+            return;
+        }
     }
 
-    public RecyLoadAdapter setLoadMoreView(int layoutId) {
-        mLoadMoreView = null;
-        mLoadMoreLayoutId = layoutId;
-        return this;
-    }
 }

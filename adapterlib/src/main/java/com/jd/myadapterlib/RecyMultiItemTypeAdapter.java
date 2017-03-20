@@ -32,7 +32,7 @@ import java.util.List;
  * OverView: 基准适配器
  * Usage: for recyclerview
  */
-public class RecyMultiItemTypeAdapter<T> extends RecyclerView.Adapter<RecyViewHolder> {
+public class RecyMultiItemTypeAdapter<T> extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     protected Context mContext;
     protected List<T> mDatas;
 
@@ -79,7 +79,7 @@ public class RecyMultiItemTypeAdapter<T> extends RecyclerView.Adapter<RecyViewHo
 
 
     @Override
-    public RecyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         ItemViewDelegate itemViewDelegate = mItemViewDelegateManager.getItemViewDelegate(viewType);
         int layoutId = itemViewDelegate.getItemViewLayoutId();
         RecyViewHolder holder = RecyViewHolder.createViewHolder(mContext, parent, layoutId);
@@ -88,11 +88,11 @@ public class RecyMultiItemTypeAdapter<T> extends RecyclerView.Adapter<RecyViewHo
         return holder;
     }
 
-    public void onViewHolderCreated(RecyViewHolder holder, View itemView) {
+    public void onViewHolderCreated(RecyclerView.ViewHolder holder, View itemView) {
 
     }
 
-    public void convert(RecyViewHolder holder, T t) {
+    public void convert(RecyclerView.ViewHolder holder, T t) {
         mItemViewDelegateManager.convert(holder, t, holder.getAdapterPosition());
     }
 
@@ -128,7 +128,7 @@ public class RecyMultiItemTypeAdapter<T> extends RecyclerView.Adapter<RecyViewHo
     }
 
     @Override
-    public void onBindViewHolder(RecyViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         convert(holder, mDatas.get(position));
     }
 
@@ -174,6 +174,14 @@ public class RecyMultiItemTypeAdapter<T> extends RecyclerView.Adapter<RecyViewHo
         }
     }
 
+    public T getItemObject(int pos) {
+        if (mDatas != null && mDatas.size() > pos) {
+            return mDatas.get(pos);
+        } else {
+            return null;
+        }
+    }
+
     //**************************************************************
     //************************添加item动画**************************
     //**************************************************************
@@ -214,7 +222,7 @@ public class RecyMultiItemTypeAdapter<T> extends RecyclerView.Adapter<RecyViewHo
     private BaseAnimation mSelectAnimation = new AlphaInAnimation();
 
     @Override
-    public void onViewAttachedToWindow(RecyViewHolder holder) {
+    public void onViewAttachedToWindow(RecyclerView.ViewHolder holder) {
         super.onViewAttachedToWindow(holder);
         addAnimation(holder);
     }

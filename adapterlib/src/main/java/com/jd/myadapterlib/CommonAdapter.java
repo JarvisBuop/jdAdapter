@@ -1,9 +1,9 @@
 package com.jd.myadapterlib;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 
 import com.jd.myadapterlib.delegate.ItemViewDelegate;
-import com.jd.myadapterlib.delegate.RecyViewHolder;
 import com.jd.myadapterlib.delegate.ViewHolder;
 
 import java.util.List;
@@ -35,7 +35,7 @@ public abstract class CommonAdapter<T> extends MultiItemTypeAdapter<T> {
             }
 
             @Override
-            public void convert(RecyViewHolder holder, T t, int position) {
+            public void convert(RecyclerView.ViewHolder holder, T t, int position) {
 
             }
         });

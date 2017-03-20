@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="all">
+        <item
+            android:id="@+id/navigation_item_1"
+            android:checked="true"
+            android:icon="@mipmap/ic_launcher"
+            android:title="首页" />
+    </group>
+    <group
+        android:id="@+id/group2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_sub_item_1"
+            android:icon="@mipmap/ic_launcher"
+            android:title="热点" />
+        <item
+            android:id="@+id/navigation_sub_item_2"
+            android:icon="@mipmap/ic_launcher"
+            android:title="体育" />
+        <item
+            android:id="@+id/navigation_sub_item_3"
+            android:icon="@mipmap/ic_launcher"
+            android:title="科技" />
+        <item
+            android:id="@+id/navigation_sub_item_4"
+            android:icon="@mipmap/ic_launcher"
+            android:title="创业" />
+    </group>
+    <group
+        android:id="@+id/group3"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/navigation_item_3"
+            android:icon="@mipmap/ic_launcher"
+            android:title="个人中心" />
+    </group>
+</menu>

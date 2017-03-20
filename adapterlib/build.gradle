@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 
 apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.JarvisBuop'
+group = 'com.github.JarvisBuop'
 def supportVersion = "24.2.0"
 android {
     compileSdkVersion 24
@@ -24,8 +24,26 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:'+supportVersion
-    compile 'com.android.support:design:'+supportVersion
-    compile 'com.android.support:support-v4:'+supportVersion
-    compile 'com.android.support:recyclerview-v7:'+supportVersion
+    compile 'com.android.support:appcompat-v7:' + supportVersion
+    compile 'com.android.support:design:' + supportVersion
+    compile 'com.android.support:support-v4:' + supportVersion
+    compile 'com.android.support:recyclerview-v7:' + supportVersion
 }
+
+task makeJar(type: Copy) {
+//删除存在的
+    delete 'build/libs/myadaptersdk.jar'
+    //设置拷贝的文件
+    from('build/intermediates/bundles/release/')
+    //打进jar包后的文件目录
+    into('build/libs/')
+    //将classes.jar放入build/libs/目录下
+    //include ,exclude参数来设置过滤
+    //（我们只关心classes.jar这个文件）
+    include('classes.jar')
+    //重命名
+    rename('classes.jar', 'myadaptersdk.jar')
+}
+makeJar.dependsOn(build)
+//在终端执行生成JAR包;
+//gradlew makeJar

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#00a0e9</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
@@ -17,6 +17,7 @@
     <color name="brown">#8D6E63</color>
     <color name="grey">#607D8B</color>
     <color name="orange">#EB6100</color>
+    <color name="animabg">#ffB5B5B5</color>
 
 
     <!--字体灰色-->

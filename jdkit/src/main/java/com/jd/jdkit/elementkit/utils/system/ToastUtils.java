@@ -10,6 +10,9 @@ import com.jd.jdkit.BaseConfig;
  * Toast工具类，对重复显示进行了优化，第二个toast不用等第一个toast消失即可显示
  */
 public class ToastUtils {
+	private ToastUtils() {
+		throw new UnsupportedOperationException("u can't fuck me...");
+	}
 
 	private static Toast toast;
 

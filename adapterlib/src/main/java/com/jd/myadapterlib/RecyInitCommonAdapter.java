@@ -23,11 +23,6 @@ public class RecyInitCommonAdapter<T> extends RecyMultiItemTypeAdapter<T> {
     protected List<T> mDatas;
     protected LayoutInflater mInflater;
 
-    public void setmDatas(List<T> mDatas) {
-        this.mDatas = mDatas;
-        notifyDataSetChanged();
-    }
-
     public RecyInitCommonAdapter(RecyclerView mRecycler, final int layoutId, List<T> datas) {
         super(mRecycler.getContext(), datas);
 
@@ -52,9 +47,10 @@ public class RecyInitCommonAdapter<T> extends RecyMultiItemTypeAdapter<T> {
             }
 
             @Override
-            public void convert(RecyViewHolder holder, T t, int position) {
+            public void convert(RecyclerView.ViewHolder holder, T t, int position) {
                 if (mListener != null) {
-                    mListener.itemConvert(holder, t, position);
+                    if (holder instanceof RecyViewHolder)
+                        mListener.itemConvert((RecyViewHolder) holder, t, position);
                 }
             }
         });
@@ -82,9 +78,10 @@ public class RecyInitCommonAdapter<T> extends RecyMultiItemTypeAdapter<T> {
             }
 
             @Override
-            public void convert(RecyViewHolder holder, T t, int position) {
+            public void convert(RecyclerView.ViewHolder holder, T t, int position) {
                 if (mListener != null) {
-                    mListener.itemConvert(holder, t, position);
+                    if (holder instanceof RecyViewHolder)
+                        mListener.itemConvert((RecyViewHolder) holder, t, position);
                 }
             }
         });
@@ -95,5 +92,4 @@ public class RecyInitCommonAdapter<T> extends RecyMultiItemTypeAdapter<T> {
     public void setDOnItemConvertListener(DOnItemConvertListener listener) {
         this.mListener = listener;
     }
-
 }

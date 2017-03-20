@@ -37,6 +37,7 @@ public abstract class DBaseFragment extends Fragment {
     private Context mContext;
     public LayoutInflater mInflater;
     public Activity mActivity;
+    public static String TAG;
 
     //是否使用缓存视图;
     private boolean isCacheView = false;
@@ -111,6 +112,7 @@ public abstract class DBaseFragment extends Fragment {
         super.onCreate(savedInstanceState);
         mActivity = getActivity();
         mContext = getActivity();
+        TAG = getClass().getSimpleName();
     }
 
     @Nullable

@@ -80,12 +80,12 @@
         "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\drawable-xxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\abc_ic_star_black_48dp.png",
-        "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_48dp.png"
-    },
-    {
         "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\abc_ic_star_black_36dp.png",
         "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\abc_ic_star_black_48dp.png",
+        "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_48dp.png"
     },
     {
         "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",

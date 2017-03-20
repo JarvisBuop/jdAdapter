@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:name=".application.App"
@@ -12,7 +13,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,14 +42,79 @@
         <activity android:name=".ui.testadapteractivity.NormalTestAnimationActivity" />
         <activity android:name=".ui.testadapteractivity.NormalTestLoad1Activity" />
         <activity android:name=".ui.testadapteractivity.NormalTestLazyFragmentActivity" />
-
-        <!--&lt;!&ndash;静态注册的广播&ndash;&gt;-->
+        <activity android:name=".ui.testadapteractivity.NormalTestGreenDaoActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalTestMultiGreenDaoActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalTestRetrofitActivity" />
+        <activity
+            android:name=".ui.testadapteractivity.NormalTestMvpActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".ui.testadapteractivity.NormalTestMDActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalInnerMDActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalTestXRecyActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalTestAidlActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalTestMessengerActivity" />
+        <activity android:name=".ui.testadapteractivity.TestCustomView.NormalTestCustomViewActivity" />
+        <activity android:name=".ui.testadapteractivity.TestCustomView.NormalTestCustomTouchActivity" />
+        <!--测试AIDL的进程间的通信;-->
+        <service
+            android:name=".service.AIDLService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.jdtest.service.action" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <!--测试Messenger的进程间的通信(基本数据类型;)-->
+        <service
+            android:name=".service.MessagerService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.jdtest.service.messenger.actioin" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <!--静态注册的广播-->
         <!--<receiver-->
-            <!--android:name="com.jd.jarvisdemonim.ui.testadapteractivity.MyNetWorkReceiver"-->
-            <!--android:label="NetworkConnection">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />-->
-            <!--</intent-filter>-->
+        <!--android:name="com.jd.jarvisdemonim.ui.testadapteractivity.MyNetWorkReceiver"-->
+        <!--android:label="NetworkConnection">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />-->
+        <!--</intent-filter>-->
         <!--</receiver>-->
+        <!--测试contentprovider的数据共享
+        唯一标识authorities建议加包名;
+        开启多进程;进程名:包名加provider
+        添加exported属性可以使其他app使用;
+        也可添加permission;-->
+        <provider
+            android:name=".provider.JProvider"
+            android:authorities="com.jd.jarvisdemonim.test.provider.Jprovider"
+            android:exported="true"
+            android:process=":provider" />
+
+        <activity android:name=".ui.testadapteractivity.NormalTestContentProviderActivity" />
+
+        <!--测试 TCP server-->
+        <service
+            android:name=".service.SocketTestService"
+            android:exported="true" />
+
+        <activity android:name=".ui.testadapteractivity.NormalTestSocketActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalTestSocketUDPActivity" />
+        <!--测试 UDP server-->
+        <service
+            android:name=".service.UdpSocketService"
+            android:exported="true" />
+
+        <!--测试aidl优化,binder连接池-->
+        <activity android:name=".ui.testadapteractivity.NormalTestBinderPoolActivity" />
+        <!--测试binderpool的服务;-->
+        <service
+            android:name=".service.BinderPoolService"
+            android:exported="true">
+
+        </service>
+        <!--测试滑动冲突;-->
+        <activity android:name=".ui.testadapteractivity.NormalTestScrollConflictActivity" />
     </application>
 </manifest>

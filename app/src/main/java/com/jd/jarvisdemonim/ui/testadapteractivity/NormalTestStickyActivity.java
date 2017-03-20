@@ -22,7 +22,7 @@ import butterknife.Bind;
  * Auther: Jarvis Dong
  * Time: on 2016/12/27 0027
  * Name:
- * OverView:
+ * OverView: 顶部浮顶效果;
  * Usage:
  */
 public class NormalTestStickyActivity extends BaseActivity {

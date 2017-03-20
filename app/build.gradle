@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
 def supportVersion = "24.2.0"
 
 android {
@@ -13,6 +14,7 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        multiDexEnabled false
     }
     buildTypes {
         release {
@@ -37,6 +39,26 @@ android {
     }
 }
 
+//dex分包官方;
+afterEvaluate {
+    tasks.matching {
+        it.name.startsWith('dex')
+    }.each { dx ->
+        if (dx.additionalParameters == null) {
+            dx.additionalParameters = []
+        }
+        dx.additionalParameters += '--multi-dex'
+        // 设置multidex.keep文件中class为第一个dex文件中包含的class，如果没有下一项设置此项无作用
+        dx.additionalParameters += "--main-dex-list=$projectDir/multidex.keep".toString()
+        //此项添加后第一个classes.dex文件只能包含-main-dex-list列表中class
+        dx.additionalParameters += '--minimal-main-dex'
+    }
+}
+
+greendao {
+    schemaVersion 1
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(path: ':nimkit')
@@ -50,10 +72,11 @@ dependencies {
     compile 'com.lzy.net:okhttputils:1.8.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
 
-    compile 'com.android.support:appcompat-v7:'+supportVersion
-    compile 'com.android.support:design:'+supportVersion
-    compile 'com.android.support:support-v4:'+supportVersion
-    compile 'com.android.support:recyclerview-v7:'+supportVersion
+    compile 'com.android.support:appcompat-v7:' + supportVersion
+    compile 'com.android.support:design:' + supportVersion
+    compile 'com.android.support:support-v4:' + supportVersion
+    compile 'com.android.support:recyclerview-v7:' + supportVersion
+    compile 'com.android.support:cardview-v7:'+supportVersion
 
     compile 'cn.bingoogolapple:bga-banner:2.0.9@aar'
     compile 'cn.bingoogolapple:bga-adapter:1.0.9@aar'
@@ -62,15 +85,29 @@ dependencies {
     compile 'cn.finalteam:galleryfinal:1.4.8.7'
     //图片上创;
     compile 'com.qiniu:qiniu-android-sdk:7.2.2'
+    //分包;
     compile 'com.android.support:multidex:1.0.0'
 
     compile 'com.android.support:support-v4:23.2.1'
-
 
     //日历控件;
     compile 'com.prolificinteractive:material-calendarview:1.4.2'
     //bottomnavigation
     compile 'com.ashokvarma.android:bottom-navigation-bar:1.3.0'
 
+    //数据库;
+    compile 'org.greenrobot:greendao:3.2.0'
+    // This is only needed if you want to use encrypted databases
+    compile 'net.zetetic:android-database-sqlcipher:3.5.4'
+
+    //retrofit下载,第二个为retrofit的json解析;
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+
+    //通用工具类框架(工具类,超级好用的说)
+//    compile 'com.blankj:utilcode:1.3.6'
+
+    //XRecyclerView
+    compile 'com.jcodecraeer:xrecyclerview:1.3.2'
 
 }

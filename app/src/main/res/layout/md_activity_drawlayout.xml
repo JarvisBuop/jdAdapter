@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:openDrawer="end">
+    <!--main-->
+    <include
+        layout="@layout/md_activity_mdtest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+    <!--drawer
+    android:layout_gravity="start"   需要设置;-->
+    <android.support.design.widget.NavigationView
+        android:id="@+id/drawer_right"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/white"
+        app:headerLayout="@layout/head_layout"
+        app:itemIconTint="@color/blue_alpha"
+        app:itemTextColor="@color/black"
+        app:menu="@menu/navigation_menu" />
+
+    <include
+        layout="@layout/head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start" />
+</android.support.v4.widget.DrawerLayout>

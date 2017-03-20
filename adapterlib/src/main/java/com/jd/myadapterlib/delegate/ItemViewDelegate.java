@@ -1,6 +1,8 @@
 package com.jd.myadapterlib.delegate;
 
 
+import android.support.v7.widget.RecyclerView;
+
 /**
  * 代理类;用于不同类型布局的适配器;
  */
@@ -38,7 +40,7 @@ public interface ItemViewDelegate<T> {
      * @param t        数据类型;
      * @param position 相应位置;
      */
-    public abstract void convert(RecyViewHolder holder, T t, int position);
+    public abstract void convert(RecyclerView.ViewHolder holder, T t, int position);
 
 
 }

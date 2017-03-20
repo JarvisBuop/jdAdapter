@@ -24,7 +24,7 @@ import java.util.List;
  * Auther: Jarvis Dong
  * Time: on 2016/12/29 0029
  * Name:
- * OverView:
+ * OverView: 消息提醒(观察者模式;)
  * Usage:
  */
 public class NormalTestTabReminderActivity extends DBaseActivity implements ReminderManager.UnreadNumChangedCallback {

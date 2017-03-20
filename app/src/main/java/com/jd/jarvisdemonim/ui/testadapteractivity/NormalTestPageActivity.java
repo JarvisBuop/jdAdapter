@@ -23,7 +23,7 @@ import butterknife.Bind;
  * Auther: Jarvis Dong
  * Time: on 2016/12/23 0023
  * Name:
- * OverView:头3,pageradapter;
+ * OverView:头3,pageradapter;适配器测试;
  * Usage:
  */
 public class NormalTestPageActivity extends BaseActivity {

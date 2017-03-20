@@ -46,9 +46,12 @@ public abstract class RecyCommonAdapter<T> extends RecyMultiItemTypeAdapter<T> {
             }
 
             @Override
-            public void convert(RecyViewHolder holder, T t, int position) {
-                RecyCommonAdapter.this.convert(holder, t, position);
+            public void convert(RecyclerView.ViewHolder holder, T t, int position) {
+                if (holder instanceof RecyViewHolder) {
+                    RecyCommonAdapter.this.convert((RecyViewHolder) holder, t, position);
+                }
             }
+
         });
     }
 

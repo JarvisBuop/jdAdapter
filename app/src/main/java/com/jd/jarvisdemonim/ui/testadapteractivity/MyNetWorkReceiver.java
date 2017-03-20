@@ -14,6 +14,7 @@ import com.jd.jdkit.reminder.ReminderManager;
  * Name:
  * OverView:监听广播,监听网络;
  * Usage:
+ * @see NormalTestNetWorkActivity
  */
 
 public class MyNetWorkReceiver extends BroadcastReceiver {

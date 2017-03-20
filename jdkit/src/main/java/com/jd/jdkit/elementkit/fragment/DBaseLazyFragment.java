@@ -63,11 +63,20 @@ public abstract class DBaseLazyFragment extends Fragment {
 
     //传true可刷新;
     public boolean prepareFetchData(boolean update) {
-        LogUtils.i("DBaseLazyFragment",this.getClass().getSimpleName()+"状态:"+isVisibleToUser+"/"+isViewInitiated+"/"+(!isDataInitiated || update));
+        LogUtils.i("DBaseLazyFragment", this.getClass().getSimpleName() + "状态:" + isVisibleToUser + "/" + isViewInitiated + "/" + (!isDataInitiated || update));
+//        if (isVisibleToUser && isViewInitiated && (!isDataInitiated || update)) {//已经初始化的fragment,只会初始化一次;
+//            initData(true);
+//            isDataInitiated = true;
+//            return true;
+//        }
+//        return false;
         if (isVisibleToUser && isViewInitiated && (!isDataInitiated || update)) {
-            initData();
+            initData(true);
             isDataInitiated = true;
             return true;
+        } else if (!(!isDataInitiated || update)) {//形成每次切换fragment都会初始化数据;
+            initData(false);//已经数据初始化的取消初始化标志;
+            isDataInitiated = false;
         }
         return false;
     }
@@ -99,7 +108,7 @@ public abstract class DBaseLazyFragment extends Fragment {
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
-        LogUtils.i("DBaseLazyFragment", this.getClass().getSimpleName() + "-setUserVisibleHint " +isVisibleToUser);
+        LogUtils.i("DBaseLazyFragment", this.getClass().getSimpleName() + "-setUserVisibleHint " + isVisibleToUser);
         super.setUserVisibleHint(isVisibleToUser);
         this.isVisibleToUser = isVisibleToUser;
         prepareFetchData();
@@ -145,6 +154,6 @@ public abstract class DBaseLazyFragment extends Fragment {
     /**
      * 初始化数据,添加逻辑;
      */
-    protected abstract void initData();
+    protected abstract void initData(boolean isNeed);
 
 }

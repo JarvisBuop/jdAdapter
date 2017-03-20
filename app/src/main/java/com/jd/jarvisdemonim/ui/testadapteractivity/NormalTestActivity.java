@@ -10,7 +10,7 @@ import com.jd.jarvisdemonim.base.BaseActivity;
 import com.jd.jarvisdemonim.entity.TestBean;
 import com.jd.jarvisdemonim.entity.TestBean2;
 import com.jd.jarvisdemonim.entity.TestBean3;
-import com.jd.jarvisdemonim.ui.testadapteractivity.adapter.TestAdapter;
+import com.jd.jarvisdemonim.ui.adapter.TestAdapter;
 import com.jd.jdkit.elementkit.utils.log.LogUtils;
 import com.jd.myadapterlib.RecyMultiItemTypeAdapter;
 import com.jd.myadapterlib.dinterface.DOnItemChildClickListener;
