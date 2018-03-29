@@ -4,8 +4,20 @@
         "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
     },
     {
+        "merged": "D:\\MyAsProject\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
+        "source": "D:\\MyAsProject\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+    },
+    {
         "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_appbar_state_list_animator.xml",
         "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\anim-v21\\design_appbar_state_list_animator.xml"
+    },
+    {
+        "merged": "D:\\MyAsProject\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
+        "source": "D:\\MyAsProject\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "D:\\MyAsProject\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_appbar_state_list_animator.xml",
+        "source": "D:\\MyAsProject\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\anim-v21\\design_appbar_state_list_animator.xml"
     },
     {
         "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",

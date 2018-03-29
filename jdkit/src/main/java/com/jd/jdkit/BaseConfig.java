@@ -12,6 +12,7 @@ public class BaseConfig {
     public static Application application= AppInitUtils.getInstance().getApplication();
     public static boolean isDebug=AppInitUtils.getInstance().getDebug();
     public static Gson gson=AppInitUtils.getInstance().getGson();
-    public static boolean isEnableLogger = AppInitUtils.getInstance().getDebug() ? AppInitUtils.getInstance().isInitLogger() : false;
+    public static boolean isEnableLogger = AppInitUtils.getInstance().getDebug() ? AppInitUtils.getInstance().isInitLogger()
+            : false;
     public static String httpTag="HttpUtils";
 }

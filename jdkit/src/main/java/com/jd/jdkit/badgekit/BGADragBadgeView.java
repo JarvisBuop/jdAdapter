@@ -445,6 +445,7 @@ class BGADragBadgeView extends View {
         if (newX > mWindowManager.getDefaultDisplay().getWidth() - badgeWidth) {
             newX = mWindowManager.getDefaultDisplay().getWidth() - badgeWidth;
         }
+
         return newX;
     }
 

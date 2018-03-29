@@ -62,7 +62,7 @@ public class NormalTestActivity extends BaseActivity {
 //                    beans.add(new TestBean("设置为commonAdapter", "test"));
 //                    beans.add(new TestBean("设置为commonAdapter", "test"));
 //                    beans.add(new TestBean("设置为commonAdapter", "test"));
-//                    RecyCommonAdapter<Object> recyCommonAdapter = new RecyCommonAdapter<Object>(mRecycler, R.layout.test1_item, beans) {
+//                    RecyCommonAdapter<Object> recyCommonAdapter = new RecyCommonAdapter<Object>(mRecycler, R.widget_provider.test1_item, beans) {
 //                        @Override
 //                        protected void convert(RecyViewHolder viewHolder, Object item, int position) {
 //                            if (item instanceof TestBean) {

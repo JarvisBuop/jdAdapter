@@ -88,7 +88,12 @@ public class NormalTestCalendarAdapterActivity extends BaseActivity {
         mRecyData.smoothScrollToPosition(pos);
         ObjectAnimator anim = ObjectAnimator.ofInt(wrapper, "Height", ScreenUtils.dpToPx(50), ScreenUtils.dpToPx(250));
         anim.setDuration(300);
-
+//        anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+//            @Override
+//            public void onAnimationUpdate(ValueAnimator animation) {
+//
+//            }
+//        });
         anim.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
@@ -170,6 +175,11 @@ public class NormalTestCalendarAdapterActivity extends BaseActivity {
 
     /**
      * view的包装类;
+     * 其实就是属性动画:
+     * 解决方法:
+     * 1.加get,set;
+     * 2.用一个类包装原始对象,间接为其提供get,set方法;
+     * 3.采用valueAnimator,监听动画过程实现属性的改变;
      */
     private class ViewWrapper {
         private View mTargetView;

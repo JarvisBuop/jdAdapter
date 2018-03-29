@@ -3,15 +3,18 @@ package com.jd.jarvisdemonim.ui;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.jd.jarvisdemonim.R;
 import com.jd.jarvisdemonim.base.BaseActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.ExcellectViewActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestAidlActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestAnimationActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestApkDlActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestBgaActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestBinderPoolActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestBottomNavigationActivity;
@@ -20,6 +23,7 @@ import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestContentProviderActi
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestExpandActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestGreenDaoActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestIndexStickyActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestJUnitActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestLazyFragmentActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestLoad1Activity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestMDActivity;
@@ -29,9 +33,13 @@ import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestMvcActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestMvcActivityNet;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestMvpActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestNetWorkActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestNotifcationActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestPageActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestRemoteViewActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestRetrofitActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestRichTextActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestScrollConflictActivity;
+import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestSenserActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestSocketActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestSocketUDPActivity;
 import com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestStickyActivity;
@@ -50,11 +58,14 @@ import com.jd.myadapterlib.delegate.RecyViewHolder;
 import com.jd.myadapterlib.dinterface.DOnItemChildClickListener;
 import com.netease.nim.uikit.common.util.log.LogUtil;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.OnClick;
+
+import static com.jd.jarvisdemonim.ui.testadapteractivity.NormalTestApkDlActivity.EXTRA_DEX_PATH;
 
 /**
  * Nim Demo 的使用;
@@ -101,7 +112,14 @@ public class MainActivity extends BaseActivity {
         mList.add("测试IPC机制:Socket 的进程间通信 TCP Server");
         mList.add("测试IPC机制:Socket 的进程间通信 UDP Server");
         mList.add("测试IPC机制AIDL优化:Binder连接池,实现一个service和多个aidl;");
-        mList.add("测试滑动冲突的优化,事件分发;");
+        mList.add("测试滑动冲突的优化,事件分发\n(暂未测试);");
+        mList.add("测试插件化app,打开apk中的类");
+        mList.add("测试通知栏的消息通知/remoteViews的使用/添加桌面插件/桌面悬浮框");
+        mList.add("测试RemoteView实现进程间的通信和刷新不同进程的UI\n(暂未测试)");
+        mList.add("测试优秀自定义控件");
+        mList.add("测试单元测试(看代码)");
+        mList.add("测试传感器");
+        mList.add("测试富文本加载");
     }
 
     @Override
@@ -183,6 +201,31 @@ public class MainActivity extends BaseActivity {
                                 break;
                             case 17:
                                 startActivity(new Intent(mContext, NormalTestScrollConflictActivity.class));
+                                break;
+                            case 18:
+                                //调用另一个未安装的app的界面;
+                                String apkName = "plugin.apk";
+                                Intent intent = new Intent(mContext, NormalTestApkDlActivity.class);
+                                intent.putExtra(EXTRA_DEX_PATH, Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + apkName);
+                                startActivity(intent);
+                                break;
+                            case 19:
+                                startActivity(new Intent(mContext, NormalTestNotifcationActivity.class));
+                                break;
+                            case 20:
+                                startActivity(new Intent(mContext, NormalTestRemoteViewActivity.class));
+                                break;
+                            case 21://自定义集合展示;
+                                startActivity(new Intent(mContext, ExcellectViewActivity.class));
+                                break;
+                            case 22:
+                                startActivity(new Intent(mContext, NormalTestJUnitActivity.class));
+                                break;
+                            case 23:
+                                startActivity(new Intent(mContext, NormalTestSenserActivity.class));
+                                break;
+                            case 24:
+                                startActivity(new Intent(mContext, NormalTestRichTextActivity.class));
                                 break;
                         }
                         break;

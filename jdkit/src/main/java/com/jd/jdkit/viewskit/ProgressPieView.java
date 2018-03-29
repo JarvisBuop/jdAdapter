@@ -21,7 +21,9 @@ import android.view.View;
 
 import com.jd.jdkit.R;
 
-
+/**
+ * 上传图片圆形进度条;
+ */
 public class ProgressPieView extends View {
 
     public interface OnProgressListener {

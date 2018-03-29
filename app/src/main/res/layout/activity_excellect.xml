@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.jd.jdkit.viewskit.ExcellectProgressBar
+        android:id="@+id/progressbar1"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:progress="40"
+        android:progressDrawable="@drawable/layer_shape3"
+        android:secondaryProgress="80" />
+
+    <com.jd.jdkit.viewskit.ExcellectProgressBar
+        android:id="@+id/progressbar2"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:max="100"
+        android:padding="15dp"
+        android:progress="40"
+        app:easy_pb_mode="horizontal" />
+
+    <ProgressBar
+        style="@android:style/Widget.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateBehavior="repeat"
+        android:indeterminateDrawable="@drawable/rotate_shape1" />
+
+    <ProgressBar
+        style="@android:style/Widget.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateBehavior="cycle"
+        android:indeterminateDrawable="@drawable/rotate_shape1" />
+
+    <com.jd.jdkit.viewskit.ExcellectProgressBar
+        android:id="@+id/progressbar3"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="15dp"
+        android:progress="40"
+        app:easy_pb_isCapRounded="true"
+        app:easy_pb_mode="circle"
+        app:easy_pb_radius="24dp"
+        app:easy_pb_reachedColor="#FF530D"
+        app:easy_pb_reachedHeight="4dp"
+        app:easy_pb_textColor="#FF530D"
+        app:easy_pb_textSize="14sp"
+        app:easy_pb_unReachedColor="#ECF0F1"
+        app:easy_pb_unReachedHeight="2dp" />
+
+    <com.jd.jdkit.viewskit.ExcellectProgressBar
+        android:id="@+id/progressbar4"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="15dp"
+        android:progress="40"
+        app:easy_pb_isCapRounded="true"
+        app:easy_pb_mode="circle_full"
+        app:easy_pb_radius="24dp"
+        app:easy_pb_reachedColor="#FF530D"
+        app:easy_pb_reachedHeight="4dp"
+        app:easy_pb_textColor="#00f"
+        app:easy_pb_textSize="14sp"
+        app:easy_pb_unReachedColor="#090"
+        app:easy_pb_unReachedHeight="2dp" />
+
+    <com.jd.jdkit.viewskit.ExcellectProgressBar
+        android:id="@+id/progressbar5"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="15dp"
+        android:progress="10"
+        app:easy_pb_isCapRounded="true"
+        app:easy_pb_mode="wave"
+        app:easy_pb_radius="24dp"
+        app:easy_pb_reachedColor="#FF530D"
+        app:easy_pb_reachedHeight="4dp"
+        app:easy_pb_textColor="#00f"
+        app:easy_pb_textSize="14sp"
+        app:easy_pb_unReachedColor="#090"
+        app:easy_pb_unReachedHeight="2dp" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start" />
+</LinearLayout>

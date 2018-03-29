@@ -77,6 +77,9 @@ public class NormalTestMessengerActivity extends DBaseActivity {
                 case MESSAGER_HELLO_NULL:
                     mDatas.clear();
                     Bundle data = msg.getData();
+                    /**
+                     * android的classLoader分为apkclassLoader(默认,设置再次为这个)和framework classloader,
+                     */
                     data.setClassLoader(getClass().getClassLoader());
                     ArrayList<String> list = data.getStringArrayList("list");
                     for (int i = 0; i < list.size(); i++) {

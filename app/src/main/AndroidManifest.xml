@@ -6,6 +6,18 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!--<uses-permission android:name="android.permission.BIND_DEVICE_ADMIN" />-->//系统的可用;
+
+    <!--//添加桌面浮动窗口的权限;-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!--单元测试添加代码-->
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:label="jarvis"
+        android:targetPackage="com.jd.jarvisdemonim" />
 
     <application
         android:name=".application.App"
@@ -14,12 +26,22 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".ui.MainActivity">
+        <!--单元测试添加代码;-->
+        <uses-library android:name="android.test.runner" />
+
+        <activity android:name=".ui.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ui.MainActivity">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
+
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
         <activity android:name=".ui.NimActivity" />
         <activity android:name=".ui.testadapteractivity.NormalTestActivity" />
@@ -35,6 +57,7 @@
         <activity android:name=".ui.testadapteractivity.NormalTestBottomNavigationActivity" />
         <activity android:name=".ui.testadapteractivity.NormalTestIndexStickyActivity" />
         <activity android:name=".ui.testadapteractivity.NormalTestToolbarActivity" />
+        <!--权限;-->
         <activity android:name="com.jd.jdkit.permissionkit.PermissionsActivity" />
         <activity android:name=".ui.testadapteractivity.NormalTestCalendarAdapterActivity" />
         <!--联网观察类;-->
@@ -116,5 +139,51 @@
         </service>
         <!--测试滑动冲突;-->
         <activity android:name=".ui.testadapteractivity.NormalTestScrollConflictActivity" />
+        <!--测试插件化开发,-->
+        <activity android:name=".ui.testadapteractivity.NormalTestApkDlActivity">
+            <intent-filter>
+                <action android:name="com.jrd.baseproject.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.testadapteractivity.NormalTestNotifcationActivity" />
+        <!--定义桌面小公举(静态注册),继承自appwidgetprovider,broadcastreceiver
+        元数据,获取resource的name的控件id
+        第一个action:小部件的事件action,remoteview通信;
+        第二个action的小部件的标志;
+        android.appwidget.action.APPWIDGET_UPDATE这个必须设置,不加无法出现;-->
+        <receiver android:name=".views.MyAppwidget">
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_provider"></meta-data>
+            <intent-filter>
+                <action android:name="com.jd.jarvisdemonim.views.action.click" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".ui.testadapteractivity.NormalTestRemoteViewActivity" />
+        <activity android:name=".ui.testadapteractivity.showcustomview.NormalTestExcellectActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalTestJUnitActivity" />
+        <activity android:name=".ui.testadapteractivity.ExcellectViewActivity" />
+        <activity android:name=".ui.testadapteractivity.NormalTestSenserActivity" />
+        <activity android:name=".ui.testadapteractivity.showcustomview.NormalTestCartActivity" />
+
+        <!--//一键锁屏;-->
+        <receiver
+            android:name=".receiver.LockReceiver"
+            android:label="app_lock">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/mylock" />
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".ui.testadapteractivity.NormalTestRichTextActivity" />
     </application>
 </manifest>

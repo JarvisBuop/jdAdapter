@@ -209,7 +209,7 @@ public class NormalTextCarlendarActivity extends DBaseActivity implements Remind
          */
         public RecyViewHolder getViewHolder() {
             if (mLayoutId == 0) {
-                throw new IllegalArgumentException("layout must not be zero , please init for layout!");
+                throw new IllegalArgumentException("widget_provider must not be zero , please init for widget_provider!");
             }
             if (this.mView == null && mLayoutId != 0) {
                 this.mView = getLayoutInflater().inflate(mLayoutId, null);
@@ -233,7 +233,7 @@ public class NormalTextCarlendarActivity extends DBaseActivity implements Remind
          */
         public View getView() {
             if (mLayoutId == 0) {
-                throw new IllegalArgumentException("layout must not be zero , please init for layout!");
+                throw new IllegalArgumentException("widget_provider must not be zero , please init for widget_provider!");
             }
             if (this.mView == null && mLayoutId != 0) {
                 this.mView = getLayoutInflater().inflate(mLayoutId, null);

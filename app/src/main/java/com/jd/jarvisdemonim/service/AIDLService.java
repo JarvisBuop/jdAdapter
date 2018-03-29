@@ -2,6 +2,7 @@ package com.jd.jarvisdemonim.service;
 
 import android.app.Service;
 import android.content.Intent;
+import android.os.Binder;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
@@ -29,7 +30,7 @@ public class AIDLService extends Service {
         @Override
         public List<MyIpcBean> getBean() throws RemoteException {
             synchronized (MyIpcBean.class) {
-                LogUtils.i("AIDLService","获取运行");
+                LogUtils.i("AIDLService", "获取运行");
                 return mBeanList;
             }
         }
@@ -38,18 +39,22 @@ public class AIDLService extends Service {
         public void addBean(MyIpcBean bean) throws RemoteException {
             synchronized (MyIpcBean.class) {
                 if (mBeanList != null && !mBeanList.contains(bean)) {
-                    LogUtils.i("AIDLService","添加运行");
+                    LogUtils.i("AIDLService", "添加运行");
                     mBeanList.add(bean);
                 }
             }
         }
     };
 
+    public class mybinder extends Binder {
+
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
         mBeanList = new ArrayList<>();//可以考虑从缓存中获取;
-        LogUtils.i("AIDLService","service oncreate");
+        LogUtils.i("AIDLService", "service oncreate");
     }
 
     @Nullable
@@ -68,6 +73,6 @@ public class AIDLService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        LogUtils.i("AIDLService","service ondestory");
+        LogUtils.i("AIDLService", "service ondestory");
     }
 }

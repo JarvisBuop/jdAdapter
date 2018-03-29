@@ -15,6 +15,8 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.jd.jdkit.BaseConfig;
 import com.jd.jdkit.R;
@@ -360,5 +362,35 @@ public abstract class DBaseActivity extends AppCompatActivity {
     @SuppressWarnings("unchecked")
     protected <T extends View> T findView(int resId) {
         return (T) (findViewById(resId));
+    }
+
+    /**
+     * @param titleName    主题名称
+     * @param pictureType  图片类型 ,默认drawable
+     * @param drawableName 图片资源,先左后右
+     */
+    protected void initTitle(String titleName, @Nullable String pictureType, String... drawableName) {
+        //资源;
+        String drawableFord = pictureType == null ? "drawable" : pictureType;
+        int drawableLeft = getResources().getIdentifier(drawableName[0], drawableFord, getPackageName());
+        int drawableRight = getResources().getIdentifier(drawableName[1], drawableFord, getPackageName());
+        //控件;
+        int leftImg = 0;
+        ImageView imgRight;
+        ImageView imgLeft;
+        int rightImg = 0;
+        if (drawableLeft != 0) {
+            leftImg = getResources().getIdentifier("title_left", "id", getPackageName());
+            imgLeft = (ImageView) findViewById(leftImg);
+            imgLeft.setImageResource(drawableLeft);
+        }
+        if (drawableRight != 0) {
+            rightImg = getResources().getIdentifier("title_right", "id", getPackageName());
+            imgRight = (ImageView) findViewById(rightImg);
+            imgRight.setImageResource(drawableRight);
+        }
+        int titleMain = getResources().getIdentifier("title_main", "id", getPackageName());
+        TextView txtTitle = (TextView) findViewById(titleMain);
+        txtTitle.setText(titleName);
     }
 }

@@ -2,5 +2,9 @@
     {
         "merged": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\contacts_search_menu.xml",
         "source": "D:\\android_program_as\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\bundles\\debug\\res\\menu\\contacts_search_menu.xml"
+    },
+    {
+        "merged": "D:\\MyAsProject\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\contacts_search_menu.xml",
+        "source": "D:\\MyAsProject\\MyBaseProject\\JarvisDemoNim\\nimkit\\build\\intermediates\\bundles\\debug\\res\\menu\\contacts_search_menu.xml"
     }
 ]

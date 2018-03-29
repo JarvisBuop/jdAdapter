@@ -55,4 +55,8 @@ public class App extends MultiDexApplication {
     public DaoSession getDaoSession() {
         return daoSession;
     }
+
+    public String getTestString() {
+        return "单元测试";
+    }
 }

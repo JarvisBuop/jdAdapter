@@ -6,6 +6,10 @@ import android.support.v4.view.ViewPager;
 
 import com.jd.jarvisdemonim.R;
 import com.jd.jarvisdemonim.ui.testfragment.TestLazyFragment1;
+import com.jd.jarvisdemonim.ui.testfragment.TestLazyFragment2;
+import com.jd.jarvisdemonim.ui.testfragment.TestLazyFragment3;
+import com.jd.jarvisdemonim.ui.testfragment.TestLazyFragment4;
+import com.jd.jarvisdemonim.ui.testfragment.TestLazyFragment5;
 import com.jd.jdkit.elementkit.activity.DBaseActivity;
 import com.jd.myadapterlib.common.CommonFragmentPagerAdapter;
 
@@ -27,6 +31,10 @@ public class NormalTestLazyFragmentActivity extends DBaseActivity {
     ViewPager mViewpager;
     CommonFragmentPagerAdapter mFPagerAdapter;
     TestLazyFragment1 fragment1;
+    TestLazyFragment2 fragment2;
+    TestLazyFragment3 fragment3;
+    TestLazyFragment4 fragment4;
+    TestLazyFragment5 fragment5;
     List<Fragment> mfrag;
 
     @Override
@@ -42,10 +50,17 @@ public class NormalTestLazyFragmentActivity extends DBaseActivity {
     @Override
     protected void initVariable() {
         mfrag = new ArrayList<>();
-        for (int i = 0; i <= 5; i++) {
-            fragment1 = TestLazyFragment1.newInstance("TestLazyFragment" + i + ":显示;");
-            mfrag.add(fragment1);
-        }
+
+        fragment1 = TestLazyFragment1.newInstance("TestLazyFragment" + 1 + ":显示;");
+        fragment2 = TestLazyFragment2.newInstance("TestLazyFragment" + 2 + ":显示;");
+        fragment3 = TestLazyFragment3.newInstance("TestLazyFragment" + 3 + ":显示;");
+        fragment4 = TestLazyFragment4.newInstance("TestLazyFragment" + 4 + ":显示;");
+        fragment5 = TestLazyFragment5.newInstance("TestLazyFragment" + 5 + ":显示;");
+        mfrag.add(fragment1);
+        mfrag.add(fragment2);
+        mfrag.add(fragment3);
+        mfrag.add(fragment4);
+        mfrag.add(fragment5);
         mFPagerAdapter = new CommonFragmentPagerAdapter(getSupportFragmentManager(), mContext);
     }
 

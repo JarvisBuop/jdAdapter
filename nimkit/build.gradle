@@ -4,8 +4,8 @@ def supportVersion = "24.2.0"
 android {
     useLibrary 'org.apache.http.legacy'
 
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 24
+    buildToolsVersion "24.0.3"
 //    buildToolsVersion buildToolsVer
 
     sourceSets {

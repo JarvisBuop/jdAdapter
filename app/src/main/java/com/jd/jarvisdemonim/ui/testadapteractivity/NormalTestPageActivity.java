@@ -127,7 +127,7 @@ public class NormalTestPageActivity extends BaseActivity {
 //                }
 //            }
 //        });
-//        mPagerAdapter.setmViews(mViewpager, R.layout.test_zidingyi, beans, new CommonPagerAdapter.OnItemFillListener() {
+//        mPagerAdapter.setmViews(mViewpager, R.widget_provider.test_zidingyi, beans, new CommonPagerAdapter.OnItemFillListener() {
 //            @Override
 //            public void fillBannerItem(View view, Object model, int position) {
 //                if (model instanceof TestBean) {

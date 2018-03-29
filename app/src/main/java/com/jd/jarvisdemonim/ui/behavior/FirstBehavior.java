@@ -95,7 +95,7 @@ public class FirstBehavior extends CoordinatorLayout.Behavior {
 
     /**
      * [1]
-     * Determine whether the supplied child view has another specific sibling view as a layout dependency.
+     * Determine whether the supplied child view has another specific sibling view as a widget_provider dependency.
      * 决定提供的子view是否有另一个作为布局依赖特殊的兄弟视图
      * 确定依赖关系,依赖变化,子view 变化;
      *

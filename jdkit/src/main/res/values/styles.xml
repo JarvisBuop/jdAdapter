@@ -45,4 +45,39 @@
         <item name="android:background">@drawable/bg_corner</item>
         <item name="android:textColor">#000000</item>
     </style>
+    <!--横线-->
+    <style name="line_horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/line</item>
+    </style>
+    <!--竖线-->
+    <style name="line_vertical">
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/line</item>
+    </style>
+
+    <!--自定义进度条-->
+    <declare-styleable name="ExcellectProgressBar">
+        <attr name="easy_pb_mode" format="enum">
+            <enum name="system" value="0"/>
+            <enum name="horizontal" value="1"/>
+            <enum name="circle" value="2"/>
+            <enum name="comet" value="3"/>
+            <enum name="wave" value="4"/>
+            <enum name="circle_full" value="5"/>
+        </attr>
+        <attr name="easy_pb_textColor" format="reference|color"/>
+        <attr name="easy_pb_textSize" format="dimension"/>
+        <attr name="easy_pb_textMargin" format="dimension"/>
+        <attr name="easy_pb_reachedColor" format="reference|color"/>
+        <attr name="easy_pb_reachedHeight" format="dimension"/>
+        <attr name="easy_pb_unReachedColor" format="reference|color"/>
+        <attr name="easy_pb_unReachedHeight" format="dimension"/>
+        <attr name="easy_pb_isCapRounded" format="boolean"/>
+        <attr name="easy_pb_isHiddenText" format="boolean"/>
+
+        <attr name="easy_pb_radius" format="dimension"/>
+    </declare-styleable>
 </resources>

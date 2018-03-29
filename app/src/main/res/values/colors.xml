@@ -18,7 +18,7 @@
     <color name="grey">#607D8B</color>
     <color name="orange">#EB6100</color>
     <color name="animabg">#ffB5B5B5</color>
-
+    <color name="green_alpha">#0ac39e</color>
 
     <!--字体灰色-->
     <color name="item_text_color">#787878</color>

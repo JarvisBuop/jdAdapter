@@ -5,13 +5,18 @@ group = 'com.github.JarvisBuop'
 def supportVersion = "24.2.0"
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    buildToolsVersion "24.0.3"
 
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+    }
+
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
     }
     buildTypes {
         release {

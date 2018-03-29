@@ -2,6 +2,7 @@ package com.jd.jarvisdemonim.ui;
 
 import android.os.Bundle;
 
+import com.jd.jarvisdemonim.R;
 import com.jd.jdkit.elementkit.activity.DBaseActivity;
 
 /**
@@ -15,12 +16,11 @@ public class NimActivity extends DBaseActivity  {
 
     @Override
     public int getContentViewId() {
-        return 0;
+        return R.layout.activity_nim_main;
     }
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-
     }
 
     @Override
